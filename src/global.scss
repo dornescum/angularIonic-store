@@ -25,13 +25,17 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-//TODO de facut separat un .sccs
+@import "theme/mixins";
+@import "theme/myVariables";
+
+//FIXME error .sccs import
 .header {
   background: var(--ion-color-dark);
   display: flex;
   .menu {
-    display: flex;
-    justify-content: center;
-    align-self: center;
+    //display: flex;
+    //justify-content: center;
+    //align-self: center;
+    @include flex-self;
   }
 }

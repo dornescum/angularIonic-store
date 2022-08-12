@@ -1,3 +1,5 @@
+//@import "../src/theme/myVariables";
+@import "src/theme/myVariables";
 .card {
   height: 14rem;
   //position: relative;
@@ -14,8 +16,10 @@
     //bottom: 0;
     font-size: 1rem;
 
-    @media(max-width:768px) {
-      font-size: .9rem;
+    //@media(max-width:768px) {
+    @media(max-width:48rem) {
+      //font-size: .9rem;
+      font-size: $font-sm;
     }
   }
 }

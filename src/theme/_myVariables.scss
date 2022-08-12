@@ -1,0 +1,36 @@
+$light-color: #fcfcfc;
+$silver: #c2c2c2;
+$dark-color: #212121;
+$danger: #FF0000FF;
+
+//utils
+$transitions: all .3s ease;
+$line-height: 25px;
+$letter-spacing: 1.1px;
+
+// spacing
+$base-padding: 1rem;
+$base-margin: 1rem;
+
+// borders
+$radius:5px;
+
+// box-shadow
+$box-light: 1px 3px 5px rgba(0,0,0,0.1) !default;
+$box-dark: 2px 4px 10px rgba(0,0,0,0.3) !default;
+
+// font sizes
+$base-font: 1rem !default;
+$font-sm: $base-font * 0.75 !default;
+$font-lg: $base-font * 1.5 !default;
+$font-xl: $base-font * 2 !default;
+$font-xxl: $base-font * 3 !default;
+$letter-spacing: 1.1px;
+
+$xs: 21.875rem; //350px
+$sm: 37.5rem; //600px
+$tablet: 48rem; //768px
+$tablet-md: 62rem; //992px
+$tablet-bg: 64rem; //1024px
+$desktop: 85.375rem; //1366px
+$lg-desktop: 120rem; //1920px
