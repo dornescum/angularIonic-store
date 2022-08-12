@@ -15,28 +15,42 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  onLogin() {
-      this.router.navigate(['/home']);
-  }
+
   onSubmit(form: NgForm) {
-    // console.log(form.value.email);
-    // console.log(form.value.password);
     console.log(form);
     if (!form.valid) {
       return;
     }
     const email = form.value.email;
     const password = form.value.password;
-    console.log(email, password);
+    console.log('Email : ', email, 'Password : ', password);
 
     if (email && password) {
       console.log('sent');
+      this.isLoading = false;
       // Send a request to login servers
+      // console.log('loading Is : ',this.isLoading);
       form.reset();
     } else {
       // Send a request to signup servers
       console.log('error');
       this.isLoading = true;
+      // console.log('loading Is : ',this.isLoading);
+    }
+  }
+  onSwitchAuthMode(){
+    console.log('loading Is : ',this.isLoading);
+    this.isLogin = !this.isLogin;
+    console.log('loading Is : ',this.isLoading);
+  }
+  onLogin() {
+    if (!this.isLoading){
+      this.router.navigate(['/home']);
+      console.log('loading Is : ',this.isLoading);
+    } else {
+      // this.router.navigate(['/home']);
+      alert('error');
+      console.log('loading Is : ',this.isLoading);
     }
   }
 }

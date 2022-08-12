@@ -1,0 +1,49 @@
+<ion-header class="header">
+  <ion-menu-button class="menu" color="light"></ion-menu-button>
+  <ion-toolbar color="dark">
+    <ion-title>Ecommerce</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" size-md="4" size-lg="3" *ngFor="let phone of phones">
+        <ion-card class="card">
+<!--          <img src="{{phone.main_img.link}}" />-->
+          <ion-img [src]="phone.main_img.link" class="card-img"></ion-img>
+          <ion-card-header style="display: flex; justify-content: space-between">
+            <ion-card-title class="card-title">{{phone.title}}</ion-card-title>
+            <ion-icon name="heart-sharp" color="danger"></ion-icon>
+          </ion-card-header>
+<!--          <ion-card-content>-->
+<!--            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the-->
+<!--            Wisconsin Territory in 1836.-->
+<!--          </ion-card-content>-->
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+
+
+
+
+
+  </ion-grid>
+
+
+
+</ion-content>
+<!--<ion-col size-sm="3" offset-sm="3">-->
+<!--  <ion-card>-->
+<!--    <img src="./assets/nokia.webp" />-->
+<!--    <ion-card-header>-->
+<!--      <ion-card-subtitle>Destination</ion-card-subtitle>-->
+<!--      <ion-card-title>Madison, WI</ion-card-title>-->
+<!--    </ion-card-header>-->
+<!--    <ion-card-content>-->
+<!--      Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the-->
+<!--      Wisconsin Territory in 1836.-->
+<!--    </ion-card-content>-->
+<!--  </ion-card>-->
+<!--</ion-col>-->

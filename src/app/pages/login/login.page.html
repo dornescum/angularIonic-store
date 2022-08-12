@@ -1,11 +1,27 @@
-<ion-header>
-  <ion-toolbar color="dark">
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--<ion-split-pane contentId="main-content">-->
+<!--  <ion-menu contentId="main-content" type="overlay">-->
 
 
-<ion-content padding>
+    <ion-header class="header">
+<!--      FIXME show button ^&^&-->
+<!--      <button ion-button menuToggle>-->
+<!--        <ion-icon name="menu"></ion-icon>-->
+<!--      </button>-->
+      <ion-menu-button class="menu" color="light"></ion-menu-button>
+<!--      ==========-->
+      <ion-toolbar color="dark">
+        <!--    <ion-title>Login</ion-title>-->
+        <ion-title>{{isLogin ? 'Login': 'Sign up'}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+<!--  </ion-menu>-->
+
+<!--</ion-split-pane>-->
+
+
+
+
+<ion-content  class="ion-padding-start ion-padding-end">
   <form #formRefrence="ngForm" (ngSubmit)="onSubmit(formRefrence)">
     <ion-grid class="login-main">
       <ion-row>
@@ -16,7 +32,7 @@
                 Email
               </ion-label>
               <!--              am acces cu NgModel pe inputul asta!-->
-              <ion-input #emailCtrl="ngModel" email name="email" ngModel required type="email"></ion-input>
+              <ion-input #emailCtrl="ngModel" email name="email" ngModel required type="email" autofocus></ion-input>
             </ion-item>
             <!--            =====mesaj de validare email===-->
             <ion-item
@@ -33,7 +49,7 @@
                 Password
               </ion-label>
               <ion-input #passwordCtrl="ngModel" minlength="6" name="password" ngModel required
-                         type="password"></ion-input>
+                         type="password" autocomplete autocorrect></ion-input>
             </ion-item>
             <!--            === mesaj de validare password ===-->
             <ion-item
@@ -49,11 +65,16 @@
           </ion-list>
         </ion-col>
       </ion-row>
-      <ion-button color="medium" expand="block" size="large" type="button"> Switch to login</ion-button>
+      <ion-button color="medium" expand="block" size="large" type="button" (click)="onSwitchAuthMode()"
+                  class="ion-padding-start ion-padding-end">
+<!--        Switch to login-->
+      {{isLogin ? 'Switch to Login' : 'Login'}}
+      </ion-button>
 
 <!--      dc formRefrence is invalid butonul este disabled-->
       <ion-button (click)="onLogin()" color="dark" expand="block" size="large" type="submit"
       [disabled]="!formRefrence.valid"
+                  class="ion-padding-start ion-padding-end"
       >Login</ion-button>
     </ion-grid>
   </form>
