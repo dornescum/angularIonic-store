@@ -14,22 +14,30 @@
 
 
   <ion-list-header>Chip Avatar</ion-list-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3">
+        <ion-img [src]="defaultImg"></ion-img>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 
-  <ion-list>
-    <ion-list-header>Item Avatars</ion-list-header>
-    <ion-item *ngFor="let item of allItems">
-      <ion-avatar slot="start">
-        <img src="{{item.img}}"/>
-      </ion-avatar>
-      <ion-nav>
-        <ion-button [routerLink]="['/folder/Outbox']"> {{item.name}}</ion-button>
-<!--        <ion-route url="/folder/Outbox" component="home></ion-route>-->
-      </ion-nav>
-    </ion-item>
-
-
-  </ion-list>
 
 
 </ion-content>
+<!--  <ion-list>-->
+<!--    <ion-list-header>Item Avatars</ion-list-header>-->
+<!--    <ion-item *ngFor="let item of allItems">-->
+<!--      <ion-avatar slot="start">-->
+<!--        <img src="{{item.img}}"/>-->
+<!--      </ion-avatar>-->
+<!--      <ion-nav>-->
+<!--        <ion-button [routerLink]="['/folder/Outbox']"> {{item.name}}</ion-button>-->
+<!--&lt;!&ndash;        <ion-route url="/folder/Outbox" component="home></ion-route>&ndash;&gt;-->
+<!--      </ion-nav>-->
+<!--    </ion-item>-->
+
+
+<!--  </ion-list>-->
