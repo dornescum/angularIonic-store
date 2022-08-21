@@ -1,0 +1,24 @@
+<ion-header class="header">
+  <ion-menu-button class="menu" color="light"></ion-menu-button>
+  <ion-toolbar color="dark">
+    <ion-title>Ecommerce</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <p>phones</p>
+    <ion-row>
+      <ion-col *ngFor="let phone of lPhones" size="6" size-lg="3" size-md="4">
+
+        <ion-card class="card" routerLink="phone/{{phone.id}}">
+          <ion-label>{{phone.id}}</ion-label>
+          <ion-card-header style="display: flex; justify-content: space-between">
+            <ion-card-title class="card-title">{{phone.title}}</ion-card-title>
+            <ion-icon color="danger" name="heart-sharp"></ion-icon>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

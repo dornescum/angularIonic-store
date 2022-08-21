@@ -9,7 +9,7 @@ export class AppComponent {
     { title: 'Login', url: 'login', icon: 'paper-plane' },
     { title: 'Home', url: 'home', icon: 'mail' },
     { title: 'Cards', url: 'cards', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
+    { title: 'Phones', url: 'phones', icon: 'archive' },
     { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
     { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];

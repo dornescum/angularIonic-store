@@ -1,0 +1,25 @@
+<div>
+  <p>{{id}}</p>
+</div>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+<!--        <p [ngModel]="product">Title{{product.title}}</p>-->
+<!--        <p [ngModel]="product">Title{{product.brand}}</p>-->
+  <p>Title{{product.title}}</p>
+  <p>Id{{product.id}}</p>
+      </ion-col>
+
+      <ion-col size="6" size-lg="3" size-md="4">
+        <ion-card>
+          <ion-card-header>Title : {{product.title}}</ion-card-header>
+        </ion-card>
+      </ion-col>
+<!--      <p> {{productObj[0].title}}</p>-->
+<!--      <p>{{productObj[0].description}}</p>-->
+<!--      <p>{{productObj[0].price}}</p>-->
+<!--      <p>{{productObj[0].brand}}</p>-->
+    </ion-row>
+  </ion-grid>
+</ion-content>
