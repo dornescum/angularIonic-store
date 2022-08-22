@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PhonesPageModule } from './pages/phones/phones.module';
 import { PhonesPageRoutingModule } from './pages/phones/phones-routing.module';
+import {CardsPageRoutingModule} from 'src/app/pages/cards/cards-routing.module';
+import {ProductComponent} from 'src/app/components/product/product.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,10 @@ const routes: Routes = [
       import('./pages/cards/cards.module').then((m) => m.CardsPageModule),
   },
   {
+    path: 'product/:id',
+    component: ProductComponent
+  },
+  {
     path: 'phones',
     loadChildren: () =>
       import('./pages/phones/phones.module').then((m) => m.PhonesPageModule),
@@ -39,6 +45,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    CardsPageRoutingModule
   ],
   exports: [RouterModule],
 })

@@ -8,10 +8,23 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let product of products" size="6" size-lg="3" size-md="4">
-        <ion-card>
-          <ion-card-header>{{product.title}}</ion-card-header>
-        </ion-card>
+<!--      <ion-col *ngFor="let product of products" size="6" size-lg="3" size-md="4">-->
+<!--        <ion-card class="card" routerLink="product/{{product.id}}">-->
+<!--          <ion-card-header style="display: flex; justify-content: space-between">-->
+<!--            <ion-card-title class="card-title">{{product.title}}</ion-card-title>-->
+<!--            <ion-icon color="danger" name="heart-sharp"></ion-icon>-->
+<!--          </ion-card-header>-->
+<!--        </ion-card>-->
+<!--      </ion-col>-->
+<!--      [(ngModel)]="product" [routerLink]="['product/{{product.id}}']"-->
+      <ion-col  >
+        {{id}}
+        <div *ngIf="product">
+          <ion-card-title class="card-title">{{product[0].title}}</ion-card-title>
+          <ion-card-title class="card-title">{{product.title}}</ion-card-title>
+        </div>
+        <p>{{product[0].desc}}</p>
+        <p>{{product[0].price}}</p>
       </ion-col>
     </ion-row>
   </ion-grid>

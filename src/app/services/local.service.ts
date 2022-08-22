@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Local} from 'src/app/shared/Local';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,9 +9,11 @@ import { Injectable } from '@angular/core';
 
 export class LocalService {
   private url = '/assets/data/localPhones.json';
-  constructor(private http: HttpClient) {}
-  getPhones() {
-    return this.http.get(this.url)
+
+  constructor(private http: HttpClient) {
+  }
+
+  getPhones(): Observable<Local[]> {
+    return this.http.get<Local[]>(this.url);
   }
 }
- 
