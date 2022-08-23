@@ -1,11 +1,11 @@
 //@import "../src/theme/myVariables";
 @import "src/theme/myVariables";
 .card {
-  height: 14rem;
+  // height: 14rem;
   //position: relative;
  .card-img{
     //height: 100%;
-    height: 10rem;
+    height: 12rem;
     //position: absolute;
     //top: 0;
    object-fit: cover;
@@ -15,11 +15,13 @@
     //position: absolute;
     //bottom: 0;
     font-size: 1rem;
+    text-transform: capitalize;
+    margin: 1rem;
 
     //@media(max-width:768px) {
     @media(max-width:48rem) {
       //font-size: .9rem;
-      font-size: $font-sm;
+      font-size: $font-lg;
     }
   }
 }

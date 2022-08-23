@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CardsPage } from './cards.page';
 import {ProductComponent} from 'src/app/components/product/product.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {
@@ -17,7 +18,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), HttpClientModule],
   exports: [RouterModule],
 })
 export class CardsPageRoutingModule {}

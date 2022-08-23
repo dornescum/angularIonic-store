@@ -1,4 +1,5 @@
 export class LocalPhonesService {
+  // nu este injectable in root
   phones = [
     {
     id: 'phone-1', title: 'phone-1', price: 399

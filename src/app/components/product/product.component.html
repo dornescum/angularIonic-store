@@ -4,13 +4,27 @@
     <ion-title>Ecommerce</ion-title>
   </ion-toolbar>
 </ion-header>
-<p>{{id}}</p>
+<!-- <p>{{ id }}</p> -->
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let product of products" size="6" size-lg="3" size-md="4">
-        <ion-card>
-          <ion-card-header>{{product.title}}</ion-card-header>
+      <ion-col size-sm="12" size-md="6" offset-md="3">
+        <ion-card *ngIf="product">
+          <ion-img [src]="product.img" class="card-img"></ion-img>
+          <ion-card-title class="card-title ion-text-center">{{
+            product.title
+          }}</ion-card-title>
+          <ion-card-content>
+            <ion-label>
+              Price :
+              {{ product.price | currency }}
+            </ion-label>
+            <br />
+            <ion-text>
+              {{ product.desc }}
+            </ion-text>
+            <ion-button routerLink="cart" size="full">Buy</ion-button>
+          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "phone-1",
+    "title": "iphone 1",
+    "price": 199,
+    "desc": "testing local 1"
+  },
+  {
+    "id": "phone-2",
+    "title": "iphone 2",
+    "price": 299,
+    "desc": "testing local 2"
+  },
+  {
+    "id": "phone-3",
+    "title": "iphone 3",
+    "price": 399,
+    "desc": "testing local 3"
+  },
+  {
+    "id": "phone-4",
+    "title": "iphone 4",
+    "price": 499,
+    "desc": "testing local 4"
+  },
+  
+  {
+    "id": "phone-5",
+    "title": "iphone 5",
+    "price": 599,
+    "desc": "testing local 5"
+  }
+]
