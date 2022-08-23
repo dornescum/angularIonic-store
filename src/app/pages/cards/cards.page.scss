@@ -1,6 +1,7 @@
 //@import "../src/theme/myVariables";
 @import "src/theme/myVariables";
 .card {
+  margin: .5rem 0;
   .card-img {
     height: 12rem;
     object-fit: cover;
