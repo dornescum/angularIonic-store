@@ -14,6 +14,8 @@ import {ApiService} from 'src/app/services/api.service';
 import { ProductComponent } from 'src/app/components/product/product.component';
 import { LocalPhonesService } from './services/localPhones.service';
 import { LocalService } from './services/local.service';
+import {StoreModule} from '@ngrx/store';
+import {cartReducer} from 'src/app/cart-store/cart.reducer';
 
 
 @NgModule({
@@ -25,6 +27,7 @@ import { LocalService } from './services/local.service';
     HttpClientModule,
     CommonModule,
     FormsModule,
+    StoreModule.forRoot({cartEntries: cartReducer})
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
