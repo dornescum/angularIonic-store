@@ -4,27 +4,28 @@
     <ion-title>Ecommerce</ion-title>
   </ion-toolbar>
 </ion-header>
-<p>{{id}}</p>
+<!-- <p>{{ id }}</p> -->
 <ion-content>
   <ion-grid>
     <ion-row>
-<!--      <ion-col *ngFor="let product of products" size="6" size-lg="3" size-md="4">-->
-<!--        <ion-card class="card" routerLink="product/{{product.id}}">-->
-<!--          <ion-card-header style="display: flex; justify-content: space-between">-->
-<!--            <ion-card-title class="card-title">{{product.title}}</ion-card-title>-->
-<!--            <ion-icon color="danger" name="heart-sharp"></ion-icon>-->
-<!--          </ion-card-header>-->
-<!--        </ion-card>-->
-<!--      </ion-col>-->
-<!--      [(ngModel)]="product" [routerLink]="['product/{{product.id}}']"-->
-      <ion-col  >
-        {{id}}
-        <div *ngIf="product">
-          <ion-card-title class="card-title">{{product[0].title}}</ion-card-title>
-          <ion-card-title class="card-title">{{product.title}}</ion-card-title>
-        </div>
-        <p>{{product[0].desc}}</p>
-        <p>{{product[0].price}}</p>
+      <ion-col size-sm="12" size-md="6" offset-md="3">
+        <ion-card *ngIf="product">
+          <ion-img [src]="product.img" class="card-img"></ion-img>
+          <ion-card-title class="card-title ion-text-center">{{
+            product.title
+          }}</ion-card-title>
+          <ion-card-content>
+            <ion-label>
+              Price :
+              {{ product.price | currency }}
+            </ion-label>
+            <br />
+            <ion-text>
+              {{ product.desc }}
+            </ion-text>
+            <ion-button routerLink="cart" size="full">Buy</ion-button>
+          </ion-card-content>
+        </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>

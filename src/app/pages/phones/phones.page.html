@@ -12,7 +12,7 @@
       <ion-col *ngFor="let phone of phones" size="6" size-lg="3" size-md="4">
 
         <!-- <ion-card class="card" routerLink="phone/{{phone.id}}"> -->
-        <ion-card class="card" routerLink="phone/{{phone.id}}">
+        <ion-card class="card" [routerLink]="['phone',phone.id]">
           <ion-img [src]="phone.main_img.link" class="card-img"></ion-img>
           <ion-label>{{phone.id}}</ion-label>
           <ion-card-header style="display: flex; justify-content: space-between">

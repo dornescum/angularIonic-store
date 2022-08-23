@@ -11,13 +11,28 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PhonePipe } from './shared/pipes/phone.pipe';
 import {ApiService} from 'src/app/services/api.service';
-import {ProductComponent} from 'src/app/components/product/product.component';
+import { ProductComponent } from 'src/app/components/product/product.component';
+import { LocalPhonesService } from './services/localPhones.service';
+import { LocalService } from './services/local.service';
 
 
 @NgModule({
   declarations: [AppComponent, PhonePipe, ProductComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, FormsModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ApiService],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    HttpClientModule,
+    CommonModule,
+    FormsModule,
+  ],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    ApiService,
+    ,
+    LocalPhonesService,
+    LocalService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

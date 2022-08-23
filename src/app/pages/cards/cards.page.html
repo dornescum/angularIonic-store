@@ -8,20 +8,23 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-<!--      <ion-col *ngFor="let phone of phones">-->
-<!--        <ion-card>-->
-<!--          <ion-title>{{phone.title}}</ion-title>-->
-<!--        </ion-card>-->
-<!--      </ion-col>-->
       <ion-col *ngFor="let phone of phones" size="6" size-lg="3" size-md="4">
-        <ion-card class="card" >
-<!--          (click)="onSelect(phone.id)"-->
-          <ion-button routerLink="product/{{phone.id}}">{{phone.title}}</ion-button>
-<!--          <ion-img [src]="phone.main_img.link" class="card-img"></ion-img>-->
-          <ion-card-header style="display: flex; justify-content: space-between">
-            <ion-card-title class="card-title">{{phone.title}}</ion-card-title>
-            <ion-icon color="danger" name="heart-sharp"></ion-icon>
+        <ion-card class="card">
+          <!-- <ion-button [routerLink]="['product', phone.id]">{{phone.title}}</ion-button> -->
+          <!--          <ion-img [src]="phone.main_img.link" class="card-img"></ion-img>-->
+          <ion-img [src]="phone.img" class="card-img"></ion-img>
+
+          <ion-card-header>
+            <ion-card-title class="card-title ion-text-center">{{phone.title}}</ion-card-title>
+            <!-- <ion-card-title class="card-title">{{phone.desc}}</ion-card-title> -->
+            <ion-label>Price : {{phone.price | currency}}</ion-label>
+            <!-- <ion-icon color="danger" name="heart-sharp"></ion-icon> -->
           </ion-card-header>
+          <ion-card-content>
+            <ion-button [routerLink]="['product', phone.id]" size="full"
+              >{{phone.title}}</ion-button
+            >
+          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
