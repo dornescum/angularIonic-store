@@ -13,25 +13,19 @@ import { NewServiceService } from 'src/app/services/new-service.service';
   styleUrls: ['./cards.page.scss'],
 })
 export class CardsPage implements OnInit {
-  // const {Filesystem} = Plugins;
  phones: any = [];
-  constructor(private localService: LocalService,
+  constructor(
     private router: Router,
     private route: ActivatedRoute, private newService: NewServiceService,
   ) { }
 
   ngOnInit() {
-    // this.localService.getPhones().subscribe(items =>{
-    //   this.phones = items;
-    // });
     this.phones = this.newService.phones;
     console.log(this.phones);
   }
 
   onSelect(id){
     this.router.navigate(['product', id],{relativeTo:this.route});
-    // this.router.navigate(['product', id],{relativeTo:this.route});
-    // this.router.navigateByUrl(`cards/product/${id}`);
   }
 
 

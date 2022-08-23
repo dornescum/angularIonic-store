@@ -1,3 +1,4 @@
+
 # angularIonic-store
 
 # Check first
@@ -118,3 +119,5 @@ When using **Ionic Framework in an Angular project**, install the latest @ionic/
 > npx cap sync
 
 `npx cap sync will copy your built web application, by default www, to your native project and install the native projects dependencies.`
+
+https://www.youtube.com/watch?v=GSc1fHXVBGg

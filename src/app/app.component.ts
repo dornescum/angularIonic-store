@@ -11,7 +11,7 @@ export class AppComponent {
     { title: 'Cards', url: 'cards', icon: 'heart' },
     { title: 'Phones', url: 'phones', icon: 'archive' },
     { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Cart', url: 'cart', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
   constructor() {}
