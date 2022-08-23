@@ -1,8 +1,8 @@
 import {createReducer, on} from '@ngrx/store';
-import {Local} from 'src/app/shared/Local';
+import {LocalProduct} from 'src/app/shared/LocalProduct';
 import {addProduct, removeProduct, clearCart} from 'src/app/cart-store/cart.actions';
 
-export const initialCartEntries: Local[] = [];
+export const initialCartEntries: LocalProduct[] = [];
 
 
 export const cartReducer = createReducer(
@@ -11,13 +11,13 @@ export const cartReducer = createReducer(
   on(clearCart, _ => [] ),
 
   on(addProduct, (entries, product) => {
-    const entriesClone: Local[] | any = JSON.parse(JSON.stringify(entries));
+    const entriesClone: LocalProduct[] | any = JSON.parse(JSON.stringify(entries));
     entriesClone.push(product);
     return entriesClone;
   }),
 
   on(removeProduct, (entries, product) => {
-    const entriesClone: Local[] | any = JSON.parse(JSON.stringify(entries));
+    const entriesClone: LocalProduct[] | any = JSON.parse(JSON.stringify(entries));
     // @ts-ignore
     const found = entriesClone.find(e => e.id === product.id);
     if (found) {

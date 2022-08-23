@@ -16,6 +16,7 @@ import { LocalPhonesService } from './services/localPhones.service';
 import { LocalService } from './services/local.service';
 import {StoreModule} from '@ngrx/store';
 import {cartReducer} from 'src/app/cart-store/cart.reducer';
+import {CartPageModule} from 'src/app/pages/cart/cart.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {cartReducer} from 'src/app/cart-store/cart.reducer';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    StoreModule.forRoot({cartEntries: cartReducer})
+    StoreModule.forRoot({cartEntries: cartReducer}),
+    CartPageModule
   ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },

@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Local} from 'src/app/shared/Local';
+import {LocalProduct} from 'src/app/shared/LocalProduct';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class LocalService {
   constructor(private http: HttpClient) {
   }
 
-  getPhones(): Observable<Local[]> {
-    return this.http.get<Local[]>(this.url);
+  getPhones(): Observable<LocalProduct[]> {
+    return this.http.get<LocalProduct[]>(this.url);
   }
 }

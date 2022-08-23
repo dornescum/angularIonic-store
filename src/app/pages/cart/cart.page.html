@@ -4,49 +4,53 @@
     <ion-title>Ecommerce</ion-title>
   </ion-toolbar>
 </ion-header>
+<app-header></app-header>
 <ion-content fullscreen="true">
   <h1 class="title">Cart</h1>
 
   <div class="cart-items">
-    <ion-card mode="ios">
+    <ion-card mode="ios" *ngFor="let entry of cartEntries$ | async">
       <ion-card-content>
         <div class="item-img">
-          <img src="../../assets/img/1.jpg" />
+          <img src="{{entry.product.img}}" />
         </div>
-
+        <h3>  {{ entry.product.title }}</h3>
         <div class="item-info">
           <p>Women t-shirt</p>
           <p>Lotto.LTD</p>
           <p>$34.00</p>
 
           <div class="qty-selector">
-            <ion-button fill="clear">-</ion-button>
+            <ion-button fill="clear" (click)="removeEntries(entry)">-</ion-button>
             <ion-label>1</ion-label>
-            <ion-button fill="clear">+</ion-button>
+            <ion-button fill="clear" (click)="addEntries(entry)">+</ion-button>
           </div>
         </div>
       </ion-card-content>
     </ion-card>
 
-    <ion-card mode="md">
-      <ion-card-content>
-        <div class="item-img">
-          <img src="../../assets/img/2.jpg" />
-        </div>
+    <ion-button expand="block" class="main-button" (click)="clearEntries()" routerDirection="forward" color="dark">Clear</ion-button>
 
-        <div class="item-info">
-          <p>Female t-shirt</p>
-          <p>Bata</p>
-          <p>$44.00</p>
 
-          <div class="qty-selector">
-            <ion-button fill="clear">-</ion-button>
-            <ion-label>1</ion-label>
-            <ion-button fill="clear">+</ion-button>
-          </div>
-        </div>
-      </ion-card-content>
-    </ion-card>
+    <!--    <ion-card mode="md">-->
+<!--      <ion-card-content>-->
+<!--        <div class="item-img">-->
+<!--          <img src="../../assets/img/2.jpg" />-->
+<!--        </div>-->
+
+<!--        <div class="item-info">-->
+<!--          <p>Female t-shirt</p>-->
+<!--          <p>Bata</p>-->
+<!--          <p>$44.00</p>-->
+
+<!--          <div class="qty-selector">-->
+<!--            <ion-button fill="clear">-</ion-button>-->
+<!--            <ion-label>1</ion-label>-->
+<!--            <ion-button fill="clear">+</ion-button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </ion-card-content>-->
+<!--    </ion-card>-->
 
 
   </div>
