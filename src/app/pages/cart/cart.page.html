@@ -1,9 +1,58 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>cart</ion-title>
+<ion-header class="header">
+  <ion-menu-button class="menu" color="light"></ion-menu-button>
+  <ion-toolbar color="dark">
+    <ion-title>Ecommerce</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content fullscreen="true">
+  <h1 class="title">Cart</h1>
 
-<ion-content>
+  <div class="cart-items">
+    <ion-card mode="ios">
+      <ion-card-content>
+        <div class="item-img">
+          <img src="../../assets/img/1.jpg" />
+        </div>
 
+        <div class="item-info">
+          <p>Women t-shirt</p>
+          <p>Lotto.LTD</p>
+          <p>$34.00</p>
+
+          <div class="qty-selector">
+            <ion-button fill="clear">-</ion-button>
+            <ion-label>1</ion-label>
+            <ion-button fill="clear">+</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card mode="md">
+      <ion-card-content>
+        <div class="item-img">
+          <img src="../../assets/img/2.jpg" />
+        </div>
+
+        <div class="item-info">
+          <p>Female t-shirt</p>
+          <p>Bata</p>
+          <p>$44.00</p>
+
+          <div class="qty-selector">
+            <ion-button fill="clear">-</ion-button>
+            <ion-label>1</ion-label>
+            <ion-button fill="clear">+</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+
+  </div>
 </ion-content>
+<ion-footer translucent="true" class="ion-no-border" mode="md">
+  <ion-toolbar color="translucent">
+    <ion-button expand="block" class="main-button" routerLink="/checkout" routerDirection="forward" color="dark">Continue</ion-button>
+  </ion-toolbar>
+</ion-footer>
