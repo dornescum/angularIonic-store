@@ -1,25 +1,18 @@
 //@import "../src/theme/myVariables";
 @import "src/theme/myVariables";
 .card {
-  // height: 14rem;
-  //position: relative;
- .card-img{
-    //height: 100%;
+  .card-img {
     height: 12rem;
-    //position: absolute;
-    //top: 0;
-   object-fit: cover;
+    object-fit: cover;
   }
 
-  .card-title{
-    //position: absolute;
-    //bottom: 0;
+  .card-title {
     font-size: 1rem;
     text-transform: capitalize;
     margin: 1rem;
 
     //@media(max-width:768px) {
-    @media(max-width:48rem) {
+    @media (max-width: 48rem) {
       //font-size: .9rem;
       font-size: $font-lg;
     }

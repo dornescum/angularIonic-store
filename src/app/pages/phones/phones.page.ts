@@ -11,7 +11,6 @@ import { ItemsComponent } from './items/items.component';
 export class PhonesPage implements OnInit {
   phones: any = [];
   id = '';
-  testing = 'test';
 
   constructor( private route: ActivatedRoute, private apiPhones: ApiService) {
   }
