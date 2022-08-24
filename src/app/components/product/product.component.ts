@@ -12,7 +12,6 @@ import {ToastController} from '@ionic/angular';
 export class ProductComponent implements OnInit {
   id;
   product: any = [];
-  // toast;
 
   // eslint-disable-next-line max-len
   constructor(private route: ActivatedRoute, private newService: NewServiceService, private store: Store, private toastController: ToastController) {
