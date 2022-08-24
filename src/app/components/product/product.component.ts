@@ -3,7 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {NewServiceService} from 'src/app/services/new-service.service';
 import {Store} from '@ngrx/store';
 import {addProduct} from 'src/app/cart-store/cart.actions';
-import {LocalProduct} from 'src/app/shared/LocalProduct';
+import {Product} from 'src/app/shared/Product';
 
 @Component({
   selector: 'app-product', templateUrl: './product.component.html', styleUrls: ['./product.component.scss'],
@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit {
     console.log(this.product);
   }
 
-  buyProduct(product: LocalProduct) {
+  buyProduct(product: Product) {
     // @ts-ignore
     this.store.dispatch(addProduct(product));
   }

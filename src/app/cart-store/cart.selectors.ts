@@ -1,29 +1,27 @@
-import {LocalProduct} from 'src/app/shared/LocalProduct';
+import {Product} from 'src/app/shared/Product';
 import {createSelector, createFeatureSelector} from '@ngrx/store';
 
 export interface ProductGroup {
-  product: LocalProduct;
+  product: Product;
   count: number;
 }
 
-export const selectCountProducts = createSelector(createFeatureSelector('cartEntries'), (state: LocalProduct[]) => state.length);
+export const selectCountProducts = createSelector(createFeatureSelector('cartEntries'), (state: Product[]) => state.length);
 
-export const selectTotalPrice = createSelector(createFeatureSelector('cartEntries'), (state: LocalProduct[]) => {
+
+export const selectTotalPrice = createSelector(createFeatureSelector('cartEntries'), (state: Product[]) => {
   let totalPrice = 0;
   state.forEach(p => totalPrice += p.price);
   return totalPrice;
 });
 
-export const selectGroupedCartEntries = createSelector(createFeatureSelector('cartEntries'), (state: LocalProduct[]) => {
-  const map: Map<number, ProductGroup> = new Map;
+export const selectGroupedCartEntries = createSelector(createFeatureSelector('cartEntries'), (state: Product[]) => {
+  const map: Map<number, ProductGroup> = new Map();
 
   state.forEach(p => {
-    // @ts-ignore
     if (map.get(p.id)) {
-      // @ts-ignore
       (map.get(p.id) as ProductGroup).count++;
     } else {
-      // @ts-ignore
       map.set(p.id, {product: p, count: 1});
     }
   });
