@@ -3,8 +3,8 @@
   <ion-toolbar color="danger">
     <ion-title>Ecommerce</ion-title>
     <div style="display: flex">
-      <p>{{countProduct$ | async}}</p>
-      <p style="padding-left: 1rem; color: #2dd36f"> {{totalPrice$| async | number: "1.2-2"}}</p>
+      <p>Products :{{countProduct$ | async}}</p>
+      <p style="padding-left: 1rem; color: #2dd36f">$ {{totalPrice$ | async }}</p>
     </div>
 
   </ion-toolbar>

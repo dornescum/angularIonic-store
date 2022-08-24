@@ -9,20 +9,19 @@ import {Product} from 'src/app/shared/Product';
   selector: 'app-product', templateUrl: './product.component.html', styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-  id = '';
+  id;
   product: any = [];
 
   constructor(private route: ActivatedRoute, private newService: NewServiceService, private store: Store) {
   }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
+    this.id = +this.route.snapshot.paramMap.get('id');
     this.product = this.newService.phones.find((x) => x.id === this.id);
     console.log(this.product);
   }
 
   buyProduct(product: Product) {
-    // @ts-ignore
     this.store.dispatch(addProduct(product));
   }
 }

@@ -10,14 +10,15 @@ export const cartReducer = createReducer(initialCartEntries,
   on(clearCart, _ => []),
 
   on(addProduct, (entries, product) => {
-    const entriesClone: Product[] | any  = JSON.parse(JSON.stringify(entries));
+    const entriesClone: Product[] = JSON.parse(JSON.stringify(entries));
+    // console.log(product);
     entriesClone.push(product);
+    // console.log(entriesClone);
     return entriesClone;
   }),
 
   on(removeProduct, (entries, product) => {
-    const entriesClone: Product[] | any = JSON.parse(JSON.stringify(entries));
-    // @ts-ignore
+    const entriesClone: Product[]  = JSON.parse(JSON.stringify(entries));
     const found = entriesClone.find(e => e.id === product.id);
     if (found) {
       entriesClone.splice(entriesClone.indexOf(found), 1);

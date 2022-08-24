@@ -12,7 +12,7 @@ import {addProduct, removeProduct} from 'src/app/cart-store/cart.actions';
 })
 export class CartPage implements OnInit {
   cartEntries$: Observable<ProductGroup[]>;
-
+  value = 1;
   constructor(private store: Store) {
     this.cartEntries$ = store.select(selectGroupedCartEntries);
   }
@@ -23,9 +23,11 @@ export class CartPage implements OnInit {
     this.store.dispatch(clearCart());
   }
   addEntries(entry: any){
-    this.store.dispatch(addProduct());
+    this.store.dispatch(addProduct(entry.product));
+    this.value++;
   }
   removeEntries(entry: any){
-    this.store.dispatch(removeProduct());
+    this.store.dispatch(removeProduct(entry.product));
+    this.value--;
   }
 }
