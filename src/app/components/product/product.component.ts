@@ -4,6 +4,7 @@ import {NewServiceService} from 'src/app/services/new-service.service';
 import {Store} from '@ngrx/store';
 import {addProduct} from 'src/app/cart-store/cart.actions';
 import {Product} from 'src/app/shared/Product';
+import {ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-product', templateUrl: './product.component.html', styleUrls: ['./product.component.scss'],
@@ -11,8 +12,10 @@ import {Product} from 'src/app/shared/Product';
 export class ProductComponent implements OnInit {
   id;
   product: any = [];
+  // toast;
 
-  constructor(private route: ActivatedRoute, private newService: NewServiceService, private store: Store) {
+  // eslint-disable-next-line max-len
+  constructor(private route: ActivatedRoute, private newService: NewServiceService, private store: Store, private toastController: ToastController) {
   }
 
   ngOnInit() {
@@ -21,7 +24,12 @@ export class ProductComponent implements OnInit {
     console.log(this.product);
   }
 
-  buyProduct(product: Product) {
+  async buyProduct(product: Product) {
     this.store.dispatch(addProduct(product));
+    const toast = await this.toastController.create({
+      message: 'Added to cart.',
+      duration: 2000
+    });
+    toast.present();
   }
 }

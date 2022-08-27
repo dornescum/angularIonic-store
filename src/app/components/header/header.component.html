@@ -11,6 +11,9 @@
         <a class="header-product" routerLink="/cart">
           <ion-icon name="cart" slot="end"></ion-icon>
           {{countProduct$ | async}}</a>
+<!--        FIXME display none if vslue === 0-->
+<!--        [ngStyle]="{color: totalPrice$ < 0 ? 'white':'black'}"-->
+
         <a class="header-product" routerLink="/cart">
           <ion-icon name="logo-euro" slot="end"></ion-icon>
           {{totalPrice$ | async }}</a>
