@@ -10,14 +10,16 @@ import { PhonesPageRoutingModule } from './phones-routing.module';
 
 import { PhonesPage } from './phones.page';
 import { ItemsComponent } from './items/items.component';
+import {CartPageModule} from 'src/app/pages/cart/cart.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    PhonesPageRoutingModule,
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        PhonesPageRoutingModule,
+        CartPageModule,
+    ],
   declarations: [PhonesPage]
 })
 export class PhonesPageModule {}

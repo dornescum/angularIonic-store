@@ -20,12 +20,10 @@ import {CartPageModule} from 'src/app/pages/cart/cart.module';
 
 
 @NgModule({
-  declarations: [AppComponent, PhonePipe, ProductComponent],
-  // eslint-disable-next-line max-len
+  declarations: [AppComponent, PhonePipe, ProductComponent], // eslint-disable-next-line max-len
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, FormsModule, StoreModule.forRoot({cartEntries: cartReducer}), CartPageModule],
   providers: [{
-    provide: RouteReuseStrategy,
-    useClass: IonicRouteStrategy
+    provide: RouteReuseStrategy, useClass: IonicRouteStrategy
   }, ApiService, LocalPhonesService, LocalService],
   bootstrap: [AppComponent],
 })
