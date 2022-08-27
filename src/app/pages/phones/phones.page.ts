@@ -3,6 +3,7 @@ import {ApiService} from 'src/app/services/api.service';
 import {LocalPhonesService} from 'src/app/services/localPhones.service';
 import { Route, Router, ActivatedRoute } from '@angular/router';
 import { ItemsComponent } from './items/items.component';
+import {PhonePipe} from 'src/app/shared/pipes/phone.pipe';
 
 
 @Component({
@@ -10,13 +11,13 @@ import { ItemsComponent } from './items/items.component';
 })
 export class PhonesPage implements OnInit {
   phones: any = [];
-  id = '';
+  // id = '';
 
   constructor( private route: ActivatedRoute, private apiPhones: ApiService) {
   }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
+    // this.id = this.route.snapshot.paramMap.get('id');
     this.apiPhones.getProduct().subscribe(items => {
       console.log(items);
       this.phones = items;

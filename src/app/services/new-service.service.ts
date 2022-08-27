@@ -45,14 +45,14 @@ export class NewServiceService {
     title: 'tv-1',
     tag: 'tv',
     price: 599,
-    img: '../../assets/img/5.jpg',
+    img: '../../assets/img/tv-1.jpg',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
   }, {
     id: 7,
     title: 'tv-2',
     tag: 'tv',
     price: 899,
-    img: '../../assets/img/5.jpg',
+    img: '../../assets/img/tv-2.jpg',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
   },];
 

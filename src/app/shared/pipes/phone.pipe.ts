@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'phone'
+  name: 'phonePipe'
 })
 export class PhonePipe implements PipeTransform {
 
@@ -10,7 +10,7 @@ export class PhonePipe implements PipeTransform {
     if (!items || !filter) {
       return items;
     }
-    return items.filter((item) => item.id);
+    return items.filter((item: { tag: string}) => item.tag ==='phone');
   }
 
 }
