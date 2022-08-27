@@ -27,11 +27,11 @@ export class CartPage implements OnInit {
   }
 
   addEntries(entry: any) {
-    this.store.dispatch(addProduct(entry.product));
+    this.store.dispatch(addProduct(entry));
   }
 
   removeEntries(entry: any) {
-    this.store.dispatch(removeProduct(entry.product));
+    this.store.dispatch(removeProduct(entry));
 
   }
 }

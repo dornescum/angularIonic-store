@@ -16,7 +16,7 @@
 
         <a class="header-product" routerLink="/cart">
           <ion-icon name="logo-euro" slot="end"></ion-icon>
-          {{totalPrice$ | async }}</a>
+          {{totalPrice$ | async | number :"1.2-2" }}</a>
       </div>
     </div>
   </ion-toolbar>
