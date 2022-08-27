@@ -6,10 +6,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PhonesPageRoutingModule } from './phones-routing.module';
+import { LaptopsPageRoutingModule } from './laptops-routing.module';
 
-import { PhonesPage } from './phones.page';
-import { ItemsComponent } from './items/items.component';
+import { LaptopsPage } from './laptops.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
 
 @NgModule({
@@ -17,9 +16,9 @@ import {CartPageModule} from 'src/app/pages/cart/cart.module';
         CommonModule,
         FormsModule,
         IonicModule,
-        PhonesPageRoutingModule,
-        CartPageModule,
+        LaptopsPageRoutingModule,
+        CartPageModule
     ],
-  declarations: [PhonesPage, ItemsComponent]
+  declarations: [LaptopsPage]
 })
-export class PhonesPageModule {}
+export class LaptopsPageModule {}
