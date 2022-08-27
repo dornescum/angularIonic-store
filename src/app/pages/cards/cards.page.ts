@@ -20,13 +20,13 @@ export class CardsPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.phones = this.newService.phones;
+    this.phones = this.newService.phones.filter(item=>item.tag ==='phone');
     console.log(this.phones);
   }
 
-  onSelect(id){
-    this.router.navigate(['product', id],{relativeTo:this.route});
-  }
+  // onSelect(id){
+  //   this.router.navigate(['product', id],{relativeTo:this.route});
+  // }
 
 
 }

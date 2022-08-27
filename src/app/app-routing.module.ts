@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { PhonesPageModule } from './pages/phones/phones.module';
-import { PhonesPageRoutingModule } from './pages/phones/phones-routing.module';
 import {CardsPageRoutingModule} from 'src/app/pages/cards/cards-routing.module';
 import {ProductComponent} from 'src/app/components/product/product.component';
 
@@ -11,11 +9,11 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
-  {
-    path: 'folder/:id',
-    loadChildren: () =>
-      import('./folder/folder.module').then((m) => m.FolderPageModule),
-  },
+  // {
+  //   path: 'folder/:id',
+  //   loadChildren: () =>
+  //     import('./folder/folder.module').then((m) => m.FolderPageModule),
+  // },
   {
     path: 'home',
     loadChildren: () =>
@@ -36,16 +34,20 @@ const routes: Routes = [
     component: ProductComponent
   },
   {
-    path: 'phones',
-    loadChildren: () =>
-      import('./pages/phones/phones.module').then((m) => m.PhonesPageModule),
-  },  {
     path: 'cart',
     loadChildren: () => import('./pages/cart/cart.module').then( m => m.CartPageModule)
   },
   {
     path: 'checkout',
     loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule)
+  },
+  {
+    path: 'tv',
+    loadChildren: () => import('./pages/tv/tv.module').then( m => m.TvPageModule)
+  },
+  {
+    path: 'laptops',
+    loadChildren: () => import('./pages/laptops/laptops.module').then( m => m.LaptopsPageModule)
   },
 
 ];
