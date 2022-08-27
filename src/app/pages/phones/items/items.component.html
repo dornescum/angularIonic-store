@@ -1,8 +1,52 @@
-<div>
-  <p>{{ id }}</p>
-</div>
+<!--<div>-->
+<!--  <p>{{ id }}</p>-->
+<!--</div>-->
 
-<div *ngIf="product && product?.length">
-  <h1>test</h1>
-   <p>{{product[0].title}}</p>
-</div>
+
+<!--<p> dsaddsdsda {{data[0].title}}</p>-->
+<!--<p> dsaddsdsda {{data[0].price}}</p>-->
+<!--<p> dsaddsdsda {{data[0].description}}</p>-->
+<app-header></app-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-sm="12" size-md="6" offset-md="3">
+        <ion-card *ngIf="data" class="product">
+          <ion-img [src]="data[0].main_img.link" class="product-img"></ion-img>
+          <ion-card-title class="product-title ion-text-center">{{
+            data[0].title
+            }}</ion-card-title>
+          <ion-card-content>
+            <ion-label class="product-price">
+              Price :
+              <span [ngStyle]="{color: data[0].price> 400 ? 'red':'black'}">
+                  {{ data[0].price | currency }}
+              </span>
+
+            </ion-label>
+            <br />
+            <div class="product-desc">
+              {{ data[0].description.slice(0, 100) }}
+            </div>
+
+            <ion-card-subtitle>Specs</ion-card-subtitle>
+            <!-- List of Text Items -->
+            <ion-list>
+              <ion-item>
+                <ion-label>Battery : {{data[0].specs.battery_size}}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Adaptor : {{data[0].specs.adaptor}}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label>Manufacturer : {{data[0].brand}}</ion-label>
+              </ion-item>
+
+            </ion-list>
+            <ion-button size="full" color="dark" (click)="buyProduct(data[0])">Buy</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

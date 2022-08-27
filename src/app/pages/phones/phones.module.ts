@@ -19,7 +19,8 @@ import {CartPageModule} from 'src/app/pages/cart/cart.module';
         IonicModule,
         PhonesPageRoutingModule,
         CartPageModule,
+
     ],
-  declarations: [PhonesPage]
+  declarations: [PhonesPage, ItemsComponent]
 })
 export class PhonesPageModule {}

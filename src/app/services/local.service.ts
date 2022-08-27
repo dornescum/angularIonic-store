@@ -8,7 +8,8 @@ import {Observable} from 'rxjs';
 })
 
 export class LocalService {
-  private url = '/assets/data/localPhones.json';
+  // private url = '/assets/data/localPhones.json';
+  private url = 'https://electronis-api.herokuapp.com/api/phones';
 
   constructor(private http: HttpClient) {
   }

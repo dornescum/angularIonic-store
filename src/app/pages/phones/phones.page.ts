@@ -3,6 +3,7 @@ import {ApiService} from 'src/app/services/api.service';
 import {LocalPhonesService} from 'src/app/services/localPhones.service';
 import { Route, Router, ActivatedRoute } from '@angular/router';
 import { ItemsComponent } from './items/items.component';
+import {LocalService} from 'src/app/services/local.service';
 
 
 @Component({
@@ -12,12 +13,17 @@ export class PhonesPage implements OnInit {
   phones: any = [];
   id = '';
 
-  constructor( private route: ActivatedRoute, private apiPhones: ApiService) {
+
+  constructor( private route: ActivatedRoute, private apiPhones: ApiService, private localPhones: LocalService) {
   }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.apiPhones.getProduct().subscribe(items => {
+    // this.apiPhones.getProduct().subscribe(items => {
+    //   console.log(items);
+    //   this.phones = items;
+    // });
+    this.localPhones.getPhones().subscribe(items => {
       console.log(items);
       this.phones = items;
     });
