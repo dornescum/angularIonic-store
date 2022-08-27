@@ -24,9 +24,9 @@ export class CardsPage implements OnInit {
     console.log(this.phones);
   }
 
-  onSelect(id){
-    this.router.navigate(['product', id],{relativeTo:this.route});
-  }
+  // onSelect(id){
+  //   this.router.navigate(['product', id],{relativeTo:this.route});
+  // }
 
 
 }

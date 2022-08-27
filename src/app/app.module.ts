@@ -26,6 +26,9 @@ import {CartPageModule} from 'src/app/pages/cart/cart.module';
     provide: RouteReuseStrategy, useClass: IonicRouteStrategy
   }, ApiService, LocalPhonesService, LocalService],
   bootstrap: [AppComponent],
+  exports: [
+    PhonePipe
+  ]
 })
 export class AppModule {
 }

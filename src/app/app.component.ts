@@ -10,7 +10,7 @@ export class AppComponent {
     { title: 'Home', url: 'home', icon: 'mail' },
     { title: 'Cards', url: 'cards', icon: 'heart' },
     { title: 'Phones', url: 'phones', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
+    { title: 'Tv', url: 'tv', icon: 'trash' },
     { title: 'Cart', url: 'cart', icon: 'warning' },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

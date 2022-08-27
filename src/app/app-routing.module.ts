@@ -11,11 +11,11 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
-  {
-    path: 'folder/:id',
-    loadChildren: () =>
-      import('./folder/folder.module').then((m) => m.FolderPageModule),
-  },
+  // {
+  //   path: 'folder/:id',
+  //   loadChildren: () =>
+  //     import('./folder/folder.module').then((m) => m.FolderPageModule),
+  // },
   {
     path: 'home',
     loadChildren: () =>
@@ -39,13 +39,18 @@ const routes: Routes = [
     path: 'phones',
     loadChildren: () =>
       import('./pages/phones/phones.module').then((m) => m.PhonesPageModule),
-  },  {
+  },
+  {
     path: 'cart',
     loadChildren: () => import('./pages/cart/cart.module').then( m => m.CartPageModule)
   },
   {
     path: 'checkout',
     loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule)
+  },
+  {
+    path: 'tv',
+    loadChildren: () => import('./pages/tv/tv.module').then( m => m.TvPageModule)
   },
 
 ];
