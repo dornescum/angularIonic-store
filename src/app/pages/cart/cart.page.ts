@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Store} from '@ngrx/store';
 import {clearCart} from 'src/app/cart-store/cart.actions';
 import {Observable} from 'rxjs';
@@ -6,7 +6,9 @@ import {ProductGroup, selectCountProducts, selectGroupedCartEntries} from 'src/a
 import {addProduct, removeProduct} from 'src/app/cart-store/cart.actions';
 
 @Component({
-  selector: 'app-cart', templateUrl: './cart.page.html', styleUrls: ['./cart.page.scss'],
+  selector: 'app-cart',
+  templateUrl: './cart.page.html',
+  styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
   cartEntries$: Observable<ProductGroup[]>;
