@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let laptop of laptops; let i = index" size="6" size-lg="3" size-md="4">
+        <ion-card class="card">
+          <ion-img [src]="laptop.img" class="card-img"></ion-img>
+          <ion-card-header>
+            <ion-label>Price : {{laptop.price | currency}}</ion-label>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-button [routerLink]="['product', laptop.id]" size="full" color="dark"
+            >{{laptop.title}}</ion-button
+            >
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
