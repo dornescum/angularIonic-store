@@ -10,6 +10,10 @@ import { CardsPageRoutingModule } from './cards-routing.module';
 
 import { CardsPage } from './cards.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
+import {Product} from 'src/app/shared/Product';
+import {ProductComponent} from 'src/app/components/product/product.component';
+
+
 // FIXME cardsPageRoutingModule
 @NgModule({
   imports: [
@@ -19,6 +23,6 @@ import {CartPageModule} from 'src/app/pages/cart/cart.module';
     CardsPageRoutingModule,
     CartPageModule,
   ],
-  declarations: [CardsPage]
+  declarations: [CardsPage, ProductComponent]
 })
 export class CardsPageModule {}
