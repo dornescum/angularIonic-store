@@ -1,9 +1,9 @@
-<ion-header class="header">
-  <ion-menu-button class="menu" color="light"></ion-menu-button>
-  <ion-toolbar color="dark">
-    <ion-title>Ecommerce</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!--<ion-header class="header">-->
+<!--  <ion-menu-button class="menu" color="light"></ion-menu-button>-->
+<!--  <ion-toolbar color="dark">-->
+<!--    <ion-title>Ecommerce</ion-title>-->
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
 <app-header></app-header>
 <ion-content fullscreen="true">
   <h1 class="title">Cart</h1>
@@ -12,20 +12,20 @@
     <ion-card mode="ios" *ngFor="let entry of cartEntries$ | async">
       <ion-card-content>
         <div class="item-img">
-          <img src="{{entry.product.img}}" />
+<!--          <img src="{{entry.product.img}}" />-->
+          <ion-img [src]="entry.product.img"></ion-img>
         </div>
-        <h3>  {{ entry.product.title }}</h3>
         <div class="item-info">
-          <p>Women t-shirt</p>
-          <p>Lotto.LTD</p>
-          <p>$34.00</p>
-
+          <h3>  {{ entry.product.title }}</h3>
           <div class="qty-selector">
             <ion-button fill="clear" (click)="removeEntries(entry)">-</ion-button>
-            <ion-label>1</ion-label>
+<!--            <p [ngStyle]="{color: value > 2 ? 'red':'black'}" class="item-value">{{value}}</p>-->
+            <ion-label>{{countProduct$ | async}}</ion-label>
             <ion-button fill="clear" (click)="addEntries(entry)">+</ion-button>
+<!--            <p>{{countProduct$ | async}}</p>-->
           </div>
         </div>
+
       </ion-card-content>
     </ion-card>
 

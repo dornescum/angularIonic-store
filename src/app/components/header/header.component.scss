@@ -1,0 +1,39 @@
+@import "src/theme/_myVariables";
+//ion-toolbar {
+//  display: flex;
+//}
+.header {
+  display: flex;
+}
+
+.header-display {
+  display: flex;
+
+  ion-title {
+    a {
+      color: $light-color;
+      text-decoration: none;
+    }
+  }
+
+  .header-cart {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-right: 1rem;
+
+    .header-product {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: $light-color;
+      padding: 0 .5rem;
+
+      ion-icon {
+        padding-right: .2rem;
+        margin: 0 .3rem;
+      }
+    }
+  }
+}
