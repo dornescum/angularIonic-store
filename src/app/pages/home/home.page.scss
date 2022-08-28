@@ -1,0 +1,14 @@
+.favorite{
+  .favorite-img {
+    height: 12rem;
+    object-fit: cover;
+    img {
+      height: 12rem;
+      //object-fit: cover;
+    }
+  }
+
+  ion-card-title {
+    margin:0.3rem 1rem;
+  }
+}

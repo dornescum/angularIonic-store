@@ -57,7 +57,7 @@ export class NewServiceService {
     id: 7,
     title: 'tv-2',
     tag: 'tvs',
-    favorite: false,
+    favorite: true,
     price: 899,
     img: '../../assets/img/tv-2.jpg',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
