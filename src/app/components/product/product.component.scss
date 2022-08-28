@@ -3,6 +3,11 @@
     margin: 1rem 0;
     text-transform: capitalize;
   }
+  .product-tag{
+    //border: 1px solid #ccc;
+    border-radius: 2px;
+    background: var(--ion-color-dark);
+  }
   .product-img {
     height: 22rem;
     object-fit: cover;

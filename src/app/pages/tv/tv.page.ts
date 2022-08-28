@@ -12,7 +12,7 @@ export class TvPage implements OnInit {
   }
 
   ngOnInit() {
-    this.tvs = this.newService.phones.filter(item => item.tag ==='tv');
+    this.tvs = this.newService.phones.filter(item => item.tag ==='tvs');
     console.log(this.tvs);
   }
 

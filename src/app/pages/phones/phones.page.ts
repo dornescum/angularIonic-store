@@ -12,7 +12,7 @@ export class PhonesPage implements OnInit {
   constructor(private router: Router, private localService: NewServiceService) { }
 
   ngOnInit() {
-    this.phones = this.localService.phones.filter(item=>item.tag ==='phone');
+    this.phones = this.localService.phones.filter(item=>item.tag ==='phones');
   }
 
 }
