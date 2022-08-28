@@ -16,14 +16,27 @@
   <ion-list-header>Chip Avatar</ion-list-header>
   <ion-grid>
     <ion-row>
-      <ion-col size-md="6" offset-md="3">
+      <ion-col offset-md="3" size-md="6">
         <ion-img [src]="defaultImg"></ion-img>
-
       </ion-col>
     </ion-row>
   </ion-grid>
 
-
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of favItems" offset-md="3" size="6" size-md="6" class="favorite">
+        <ion-card>
+          <ion-img [src]="item.img" class="favorite-img"></ion-img>
+          <ion-card-title>{{item.title}}</ion-card-title>
+          <ion-button [routerLink]="['/', item.tag, 'product', item.id]" size="full"  color="dark"
+          >
+            <ion-icon name="chevron-back-outline"></ion-icon>
+            {{item.tag}}
+          </ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 
 </ion-content>

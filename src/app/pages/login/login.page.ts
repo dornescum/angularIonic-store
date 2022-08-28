@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
+import { AlertController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login', templateUrl: './login.page.html', styleUrls: ['./login.page.scss'],
@@ -9,10 +11,11 @@ export class LoginPage implements OnInit {
   isLoading = false;
   isLogin = true;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private alertController: AlertController) {
   }
 
   ngOnInit() {
+    this.presentAlert();
   }
 
 
@@ -52,5 +55,16 @@ export class LoginPage implements OnInit {
       alert('error');
       console.log('loading Is : ',this.isLoading);
     }
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Made for mobile',
+      // subHeader: 'Open on your phone',
+      message: 'Open on your phone',
+      buttons: ['OK'],
+    });
+
+    await alert.present();
   }
 }

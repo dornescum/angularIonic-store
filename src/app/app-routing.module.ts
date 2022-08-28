@@ -42,7 +42,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/checkout/checkout.module').then( m => m.CheckoutPageModule)
   },
   {
-    path: 'tv',
+    path: 'tvs',
     loadChildren: () => import('./pages/tv/tv.module').then( m => m.TvPageModule)
   },
   {
