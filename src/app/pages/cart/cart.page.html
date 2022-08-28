@@ -20,7 +20,7 @@
           <div class="qty-selector">
             <ion-button fill="clear" (click)="removeEntries(entry)">-</ion-button>
 <!--            FIXME identifica produsele -->
-            <ion-label>{{countProduct$ | async }}</ion-label>
+            <ion-label>{{entry.count }}</ion-label>
             <ion-button fill="clear" (click)="addEntries(entry)">+</ion-button>
 <!--            <p>{{countProduct$ | async}}</p>-->
           </div>

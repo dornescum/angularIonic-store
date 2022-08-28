@@ -12,7 +12,8 @@ import {addProduct, removeProduct} from 'src/app/cart-store/cart.actions';
 })
 export class CartPage implements OnInit {
   cartEntries$: Observable<ProductGroup[]>;
-  countProduct$: Observable<number>;
+  // countProduct$: Observable<number>;
+  countProduct$: Observable<any>;
 
 
   constructor(private store: Store) {
