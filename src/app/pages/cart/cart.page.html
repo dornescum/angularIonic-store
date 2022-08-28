@@ -19,7 +19,8 @@
           <h3>  {{ entry.product.title }}</h3>
           <div class="qty-selector">
             <ion-button fill="clear" (click)="removeEntries(entry)">-</ion-button>
-            <ion-label>1</ion-label>
+<!--            FIXME identifica produsele -->
+            <ion-label>{{entry.count }}</ion-label>
             <ion-button fill="clear" (click)="addEntries(entry)">+</ion-button>
 <!--            <p>{{countProduct$ | async}}</p>-->
           </div>

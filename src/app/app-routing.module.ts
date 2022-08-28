@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import {CardsPageRoutingModule} from 'src/app/pages/cards/cards-routing.module';
+// import {CardsPageRoutingModule} from 'src/app/pages/cards/cards-routing.module';
 import {ProductComponent} from 'src/app/components/product/product.component';
 
 const routes: Routes = [
@@ -24,11 +24,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginPageModule),
   },
-  {
-    path: 'cards',
-    loadChildren: () =>
-      import('./pages/cards/cards.module').then((m) => m.CardsPageModule),
-  },
+  // {
+  //   path: 'cards',
+  //   loadChildren: () =>
+  //     import('./pages/cards/cards.module').then((m) => m.CardsPageModule),
+  // },
   {
     path: 'product/:id',
     component: ProductComponent
@@ -49,14 +49,21 @@ const routes: Routes = [
     path: 'laptops',
     loadChildren: () => import('./pages/laptops/laptops.module').then( m => m.LaptopsPageModule)
   },
+  {
+    path: 'phones',
+    loadChildren: () => import('./pages/phones/phones.module').then( m => m.PhonesPageModule)
+  },
 
 ];
 
+
+
+// @ts-ignore
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
-    CardsPageRoutingModule
   ],
   exports: [RouterModule],
 })
+// @ts-ignore
 export class AppRoutingModule {}

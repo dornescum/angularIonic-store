@@ -25,6 +25,7 @@ export const selectTotalPrice = createSelector(
 // });
 
 export const selectGroupedCartEntries = createSelector(createFeatureSelector('cartEntries'), (state: Product[]) => {
+  // let map: Map<number, ProductGroup> = new Map;
   const map: Map<number, ProductGroup> = new Map();
 
   state.forEach(p => {
