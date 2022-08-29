@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 // import {CardsPageRoutingModule} from 'src/app/pages/cards/cards-routing.module';
 import {ProductComponent} from 'src/app/components/product/product.component';
+import {AuthGuard} from 'src/app/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -43,7 +44,7 @@ const routes: Routes = [
   },
   {
     path: 'tvs',
-    loadChildren: () => import('./pages/tv/tv.module').then( m => m.TvPageModule)
+    loadChildren: () => import('./pages/tv/tv.module').then( m => m.TvPageModule), canActivate: [AuthGuard]
   },
   {
     path: 'laptops',
@@ -55,7 +56,7 @@ const routes: Routes = [
   },
 
 ];
-
+// canActivate: [AuthGuard]
 
 
 // @ts-ignore

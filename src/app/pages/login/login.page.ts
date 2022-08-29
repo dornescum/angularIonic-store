@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import {AuthGuard} from 'src/app/guards/auth.guard';
+import {AuthService} from 'src/app/services/auth.service';
+
 
 
 @Component({
@@ -11,7 +14,7 @@ export class LoginPage implements OnInit {
   isLoading = false;
   isLogin = true;
 
-  constructor(private router: Router, private alertController: AlertController) {
+  constructor(private router: Router, private alertController: AlertController, private authService: AuthService) {
   }
 
   ngOnInit() {
@@ -38,7 +41,8 @@ export class LoginPage implements OnInit {
       // Send a request to signup servers
       console.log('error');
       this.isLoading = true;
-      // console.log('loading Is : ',this.isLoading);
+      // this.isLoading =  this.authService.isAuthenticated();
+      console.log('loading Is : ',this.isLoading);
     }
   }
   onSwitchAuthMode(){
