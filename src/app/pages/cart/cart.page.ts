@@ -35,6 +35,5 @@ export class CartPage implements OnInit {
 
   removeEntries(entry: any) {
     this.store.dispatch(removeProduct(entry.product));
-
   }
 }
