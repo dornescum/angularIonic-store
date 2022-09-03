@@ -20,6 +20,7 @@ import {cartReducer} from 'src/app/cart-store/cart.reducer';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
 
 
+
 @NgModule({
   declarations: [AppComponent, ProductComponent], // eslint-disable-next-line max-len
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, FormsModule, StoreModule.forRoot({cartEntries: cartReducer}), CartPageModule],

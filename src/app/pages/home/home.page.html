@@ -31,7 +31,7 @@
           <ion-img [src]="item.img" class="favorite-img"></ion-img>
           <div class="favorite-footer">
             <p class="favorite-title">{{item.title}}</p>
-            <p>stars</p>
+<p>rating {{item.rating}}</p>
             <p class="favorite-old-price">{{(item.price * taxPrice) + item.price | currency}}</p>
             <p class="favorite-price">{{item.price | currency}}</p>
           </div>

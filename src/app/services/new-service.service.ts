@@ -11,6 +11,7 @@ export class NewServiceService {
     tag: 'phones',
     favorite: true,
     price: 399,
+    rating:3,
     img: '../../assets/img/1.jpg',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
   }, {
@@ -19,6 +20,7 @@ export class NewServiceService {
     tag: 'phones',
     favorite: true,
     price: 299,
+    rating:5,
     img: '../../assets/img/2.jpg',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
   }, {
@@ -27,6 +29,7 @@ export class NewServiceService {
     tag: 'phones',
     favorite: true,
     price: 499,
+    rating:4,
     img: '../../assets/img/3.jpg',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
   }, {
@@ -35,6 +38,7 @@ export class NewServiceService {
     tag: 'phones',
     favorite: false,
     price: 599,
+    rating:1,
     img: '../../assets/img/4.jpg',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
   }, {
@@ -43,6 +47,7 @@ export class NewServiceService {
     tag: 'phones',
     favorite: false,
     price: 599,
+    rating:2,
     img: '../../assets/img/5.jpg',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
   }, {
@@ -51,6 +56,7 @@ export class NewServiceService {
     tag: 'tvs',
     favorite: false,
     price: 599,
+    rating:5,
     img: '../../assets/img/tv-1.jpg',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
   }, {
@@ -59,6 +65,7 @@ export class NewServiceService {
     tag: 'tvs',
     favorite: true,
     price: 899,
+    rating:2,
     img: '../../assets/img/tv-2.jpg',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
   },
@@ -68,6 +75,7 @@ export class NewServiceService {
       tag: 'laptops',
       favorite: true,
       price: 599,
+      rating:5,
       img: '../../assets/img/tv-1.jpg',
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
     }, {
@@ -76,6 +84,7 @@ export class NewServiceService {
       tag: 'laptops',
       favorite: false,
       price: 899,
+      rating:5,
       img: '../../assets/img/tv-2.jpg',
       desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita voluptate voluptates accusantium, recusandae delectus odit laborum nostrum esse! Rerum minus expedita recusandae possimus voluptatibus eius excepturi error veritatis voluptatem cumque?',
     },

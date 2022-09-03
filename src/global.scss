@@ -28,6 +28,9 @@
 @import "theme/mixins";
 @import "theme/myVariables";
 
+@import '~css-star-rating/scss/star-rating';
+
+
 //FIXME error .sccs import
 .header {
   background: var(--ion-color-dark);
