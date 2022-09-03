@@ -42,6 +42,9 @@ after
 
 `for android hard reset of emulator if you had previous app open`
 
+after build 
+
+>npx cap sync
 
 ### If error check this
 > npm install -g @ionic/cli

@@ -7,6 +7,8 @@ import {NewServiceService} from 'src/app/services/new-service.service';
 export class HomePage implements OnInit {
   favItems: any = [];
   target: HTMLIonNavElement;
+  taxPrice= Math.random();
+
   // eslint-disable-next-line max-len
   defaultImg = 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80';
 
@@ -17,5 +19,4 @@ export class HomePage implements OnInit {
     this.favItems = this.newService.phones.filter(item=>item.favorite === true);
     console.log(this.favItems);
   }
-
 }

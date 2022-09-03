@@ -2,13 +2,44 @@
   .favorite-img {
     height: 12rem;
     object-fit: cover;
+    @media (max-width: 360px) {
+      height: 10rem;
+    }
+    @media (max-width: 320px) {
+      height: 9rem;
+    }
     img {
       height: 12rem;
-      //object-fit: cover;
     }
   }
 
   ion-card-title {
-    margin:0.3rem 1rem;
+    margin:0.5rem 1rem;
+    text-transform: capitalize;
+    @media (max-width: 320px) {
+      font-size: 12px;
+    }
+  }
+}
+ion-col {
+  padding: 0;
+}
+.favorite-footer {
+  display: flex;
+  flex-direction: column;
+  margin: .4rem .3rem;
+  .favorite-title{
+    margin: .1rem 0 .3rem .1rem;
+    text-transform: capitalize;
+    color: var(--ion-color-dark-tint);
+  }
+  .favorite-price {
+    margin: .1rem;
+    color: var(--ion-color-danger);
+    font-weight: 900;
+  }
+  .favorite-old-price{
+    color: #ccc;
+    margin: .2rem;
   }
 }

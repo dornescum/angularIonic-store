@@ -13,10 +13,10 @@
 <ion-content fullscreen>
 
 
-  <ion-list-header>Chip Avatar</ion-list-header>
+  <ion-list-header>User name</ion-list-header>
   <ion-grid>
     <ion-row>
-      <ion-col offset-md="3" size-md="6">
+      <ion-col offset-md="0" size-md="12">
         <ion-img [src]="defaultImg"></ion-img>
       </ion-col>
     </ion-row>
@@ -24,15 +24,22 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let item of favItems" offset-md="3" size="6" size-md="6" class="favorite">
-        <ion-card>
+<!--      offset-md="3" size-md="6" size-lg="3" offset-lg="0"-->
+      <ion-col *ngFor="let item of favItems"
+               size="6" size-md="6" offset-md="0" size-lg="3"   class="favorite">
+        <ion-card [routerLink]="['/', item.tag, 'product', item.id]">
           <ion-img [src]="item.img" class="favorite-img"></ion-img>
-          <ion-card-title>{{item.title}}</ion-card-title>
-          <ion-button [routerLink]="['/', item.tag, 'product', item.id]" size="full"  color="dark"
-          >
-            <ion-icon name="chevron-back-outline"></ion-icon>
-            {{item.tag}}
-          </ion-button>
+          <div class="favorite-footer">
+            <p class="favorite-title">{{item.title}}</p>
+            <p>stars</p>
+            <p class="favorite-old-price">{{(item.price * taxPrice) + item.price | currency}}</p>
+            <p class="favorite-price">{{item.price | currency}}</p>
+          </div>
+<!--          <ion-button [routerLink]="['/', item.tag, 'product', item.id]" size="block"  color="dark"-->
+<!--          >-->
+<!--            <ion-icon name="chevron-back-outline"></ion-icon>-->
+<!--            {{item.tag}}-->
+<!--          </ion-button>-->
         </ion-card>
       </ion-col>
     </ion-row>

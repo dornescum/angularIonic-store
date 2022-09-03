@@ -2,6 +2,14 @@
   .product-title {
     margin: 1rem 0;
     text-transform: capitalize;
+    @media (max-width: 360px) {
+     font-size: 18px;
+      margin: .7rem 0;
+    }
+    @media (max-width: 320px) {
+      font-size: 16px;
+      margin: .6rem 0;
+    }
   }
   .product-tag{
     //border: 1px solid #ccc;
@@ -20,6 +28,14 @@
   }
   .product-desc{
     margin: 2rem 0;
+    @media (max-width: 360px) {
+      font-size: 14px;
+      margin: .7rem 0;
+    }
+    @media (max-width: 320px) {
+      font-size: 12px;
+      margin: .6rem 0;
+    }
   }
 //   ion-text{
 //     margin: 2rem 0;
