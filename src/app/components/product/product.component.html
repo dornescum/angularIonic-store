@@ -1,28 +1,28 @@
-<!--<ion-header class="header">-->
-<!--  <ion-menu-button class="menu" color="light"></ion-menu-button>-->
-<!--  <ion-toolbar color="dark">-->
-<!--    <ion-title>Ecommerce</ion-title>-->
-<!--  </ion-toolbar>-->
-<!--</ion-header>-->
 <app-header></app-header>
 <ion-content>
   <ion-grid>
     <ion-row>
       <ion-col size-sm="12" size-md="6" offset-md="3">
         <ion-card *ngIf="product" class="product">
-<!--          [routerLink]="['', product.tag]"-->
-          <ion-button [routerLink]="['', product.tag]" fill="clear" class="product-tag"
-                      color="light">
-            <ion-icon name="chevron-back-outline"></ion-icon>
-            {{product.tag}}
-          </ion-button>
-<!--          <ion-buttons slot="start" [routerLink]="['', product.tag]">{{product.tag}}-->
-<!--            <ion-back-button></ion-back-button>-->
-<!--          </ion-buttons>-->
+<!--          <ion-button [routerLink]="['', product.tag]" fill="clear" class="product-tag"-->
+<!--                      color="light">-->
+<!--            <ion-icon name="chevron-back-outline"></ion-icon>-->
+<!--            {{product.tag}}-->
+<!--          </ion-button>-->
           <ion-img [src]="product.img" class="product-img"></ion-img>
-          <ion-card-title class="product-title ion-text-center">{{
-            product.title
-          }}</ion-card-title>
+          <div class="product-header">
+            <ion-card-title class="product-title ion-text-center">{{
+              product.title
+              }}</ion-card-title>
+            <ion-button [routerLink]="['', product.tag]" fill="clear" class="product-tag"
+                        color="light">
+              <ion-icon name="chevron-back-outline"></ion-icon>
+              {{product.tag}}
+            </ion-button>
+          </div>
+<!--          <ion-card-title class="product-title ion-text-center">{{-->
+<!--            product.title-->
+<!--          }}</ion-card-title>-->
           <ion-card-content>
             <ion-label class="product-price">
               Price :
@@ -36,8 +36,6 @@
               {{ product.desc }}
             </div>
             <ion-button size="full" color="dark" (click)="buyProduct(product)">Buy</ion-button>
-<!--            routerLink="/cart"-->
-<!--            <ion-button  size="full" color="dark" (click)="presentToastWithOptions()">Checkout</ion-button>-->
           </ion-card-content>
         </ion-card>
       </ion-col>

@@ -51,8 +51,8 @@ export class LoginPage implements OnInit {
       this.router.navigate(['/home']);
       console.log('loading Is : ',this.isLoading);
     } else {
-      // this.router.navigate(['/home']);
-      alert('error');
+      this.router.navigate(['/sign-up']);
+      // alert('error');
       console.log('loading Is : ',this.isLoading);
     }
   }

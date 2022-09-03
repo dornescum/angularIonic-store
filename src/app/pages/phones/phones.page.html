@@ -3,18 +3,36 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let phone of phones; let i = index" size="6" size-lg="3" size-md="4">
-        <ion-card class="card">
-          <ion-img [src]="phone.img" class="card-img"></ion-img>
-          <ion-card-header>
-            <ion-label>Price : {{phone.price | currency}}</ion-label>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-button [routerLink]="['product', phone.id]" size="full" color="dark"
-            >{{phone.title}}</ion-button
-            >
-          </ion-card-content>
+      <ion-col *ngFor="let item of phones; let i = index" size="6" size-lg="3" size-md="4" class="favorite" offset-md="0" size="6" size-lg="3" size-md="6">
+        <ion-card [routerLink]="['/', item.tag, 'product', item.id]">
+          <ion-card-title *ngIf="item.flashSale">Sale</ion-card-title>
+          <ion-img [src]="item.img" class="favorite-img"></ion-img>
+          <div class="favorite-footer">
+            <ul class="favorite-title">
+              <li>{{item.title}}</li>
+              <li *ngIf="item.favorite">
+                <ion-icon name="star" style="color: red"></ion-icon>
+              </li>
+            </ul>
+            <p class="favorite-old-price">Old price : {{(item.price * taxPrice) + item.price | currency}}</p>
+            <!--            <p class="favorite-price">{{item.price | currency}}</p>-->
+            <div class="favorite-actions">
+              <p class="favorite-price">{{item.price | currency}}</p>
+              <ion-icon name="cart" style="color: var(--ion-color-dark); height: 18px" class="favorite-action"></ion-icon>
+            </div>
+          </div>
         </ion-card>
+<!--        <ion-card class="card">-->
+<!--          <ion-img [src]="phone.img" class="card-img"></ion-img>-->
+<!--          <ion-card-header>-->
+<!--            <ion-label>Price : {{phone.price | currency}}</ion-label>-->
+<!--          </ion-card-header>-->
+<!--          <ion-card-content>-->
+<!--            <ion-button [routerLink]="['product', phone.id]" size="full" color="dark"-->
+<!--            >{{phone.title}}</ion-button-->
+<!--            >-->
+<!--          </ion-card-content>-->
+<!--        </ion-card>-->
       </ion-col>
     </ion-row>
   </ion-grid>
