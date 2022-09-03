@@ -9,6 +9,7 @@ import {NewServiceService} from 'src/app/services/new-service.service';
 })
 export class LaptopsPage implements OnInit {
   laptops: any = [];
+  taxPrice= Math.random();
 
   constructor(private router: Router, private localService: NewServiceService) { }
 

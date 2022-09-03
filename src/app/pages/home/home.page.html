@@ -17,47 +17,89 @@
   <ion-grid>
     <ion-row>
       <ion-col offset-md="0" size-md="12">
-        <ion-img [src]="defaultImg"></ion-img>
+        <ion-img [src]="defaultImg" class="home-img"></ion-img>
       </ion-col>
     </ion-row>
   </ion-grid>
 
   <ion-grid>
+    <ion-title>Favorite Products <span>
+      <ion-icon name="star" style="color: red"></ion-icon>
+    </span></ion-title>
     <ion-row>
-<!--      offset-md="3" size-md="6" size-lg="3" offset-lg="0"-->
+      <!--      offset-md="3" size-md="6" size-lg="3" offset-lg="0"-->
       <ion-col *ngFor="let item of favItems"
-               size="6" size-md="6" offset-md="0" size-lg="3"   class="favorite">
+               class="favorite" offset-md="0" size="6" size-lg="3" size-md="6">
         <ion-card [routerLink]="['/', item.tag, 'product', item.id]">
+          <ion-card-title *ngIf="item.flashSale">Sale</ion-card-title>
           <ion-img [src]="item.img" class="favorite-img"></ion-img>
           <div class="favorite-footer">
-            <p class="favorite-title">{{item.title}}</p>
-<p>rating {{item.rating}}</p>
-            <p class="favorite-old-price">{{(item.price * taxPrice) + item.price | currency}}</p>
-            <p class="favorite-price">{{item.price | currency}}</p>
+            <ul class="favorite-title">
+              <li>{{item.title}}</li>
+              <li *ngIf="item.favorite">
+                <ion-icon name="star" style="color: red"></ion-icon>
+              </li>
+            </ul>
+            <!--            <p class="favorite-title">{{item.title}}</p>-->
+            <!--            FIXME rating error -->
+            <!--<p>rating {{item.rating}}</p>-->
+            <!--            <bar-rating [(rate)]="item.rating" [max]="5"></bar-rating>-->
+            <!--            <bar-rating [(rate)]="item.rating" [max]="item.rating" style="color: red">-->
+            <!--              <i class="bi bi-star-fill" style="margin: 2px; color: #edb867"></i>-->
+            <!--            </bar-rating>-->
+
+
+            <p class="favorite-old-price">Old price : {{(item.price * taxPrice) + item.price | currency}}</p>
+            <div class="favorite-actions">
+              <p class="favorite-price">{{item.price | currency}}</p>
+<!--              <ion-button [routerLink]="['/', item.tag, 'product', item.id]" color="dark" class="favorite-action">-->
+                <ion-icon name="cart" style="color: black; height: 18px" class="favorite-action"></ion-icon>
+<!--              </ion-button>-->
+            </div>
+
           </div>
-<!--          <ion-button [routerLink]="['/', item.tag, 'product', item.id]" size="block"  color="dark"-->
-<!--          >-->
-<!--            <ion-icon name="chevron-back-outline"></ion-icon>-->
-<!--            {{item.tag}}-->
-<!--          </ion-button>-->
+          <!--          <ion-button [routerLink]="['/', item.tag, 'product', item.id]" size="block"  color="dark"-->
+          <!--          >-->
+          <!--            <ion-icon name="chevron-back-outline"></ion-icon>-->
+          <!--            {{item.tag}}-->
+          <!--          </ion-button>-->
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!--    ===========-->
+    <div class="products">
+      <h3> Products
+<!--        FIXME padding icon -->
+        <span>
+          <ion-icon name="barcode" style=""></ion-icon>
+        </span>
+      </h3>
+    </div>
+
+    <ion-row>
+      <ion-col *ngFor="let item of allProducts"
+               class="favorite" offset-md="0" size="6" size-lg="3" size-md="6">
+        <ion-card [routerLink]="['/', item.tag, 'product', item.id]">
+          <ion-card-title *ngIf="item.flashSale">Sale</ion-card-title>
+          <ion-img [src]="item.img" class="favorite-img"></ion-img>
+          <div class="favorite-footer">
+            <ul class="favorite-title">
+              <li>{{item.title}}</li>
+              <li *ngIf="item.favorite">
+                <ion-icon name="star" style="color: red"></ion-icon>
+              </li>
+            </ul>
+            <p class="favorite-old-price">Old price : {{(item.price * taxPrice) + item.price | currency}}</p>
+<!--            <p class="favorite-price">{{item.price | currency}}</p>-->
+            <div class="favorite-actions">
+              <p class="favorite-price">{{item.price | currency}}</p>
+              <ion-icon name="cart" style="color: black; height: 18px" class="favorite-action"></ion-icon>
+            </div>
+          </div>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
-
-
 </ion-content>
-<!--  <ion-list>-->
-<!--    <ion-list-header>Item Avatars</ion-list-header>-->
-<!--    <ion-item *ngFor="let item of allItems">-->
-<!--      <ion-avatar slot="start">-->
-<!--        <img src="{{item.img}}"/>-->
-<!--      </ion-avatar>-->
-<!--      <ion-nav>-->
-<!--        <ion-button [routerLink]="['/folder/Outbox']"> {{item.name}}</ion-button>-->
-<!--&lt;!&ndash;        <ion-route url="/folder/Outbox" component="home></ion-route>&ndash;&gt;-->
-<!--      </ion-nav>-->
-<!--    </ion-item>-->
-
-
-<!--  </ion-list>-->

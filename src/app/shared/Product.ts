@@ -14,4 +14,8 @@ export interface Product {
   price: number;
   desc: string;
   img?: string;
+  tag?: string;
+  favorite?: boolean;
+  flashSale?: boolean;
+  rating: number;
 }

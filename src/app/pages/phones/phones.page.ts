@@ -9,6 +9,7 @@ import {NewServiceService} from 'src/app/services/new-service.service';
 })
 export class PhonesPage implements OnInit {
   phones: any = [];
+  taxPrice= Math.random();
   constructor(private router: Router, private localService: NewServiceService) { }
 
   ngOnInit() {
