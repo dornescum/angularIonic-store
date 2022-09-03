@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {NewServiceService} from 'src/app/services/new-service.service';
+import {Product} from 'src/app/shared/Product';
 
 @Component({
   selector: 'app-home', templateUrl: './home.page.html', styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  favItems: any = [];
+  favItems: Product[] = [];
+  allProducts: Product[] =[];
   target: HTMLIonNavElement;
   taxPrice= Math.random();
 
@@ -18,5 +20,6 @@ export class HomePage implements OnInit {
   ngOnInit() {
     this.favItems = this.newService.phones.filter(item=>item.favorite === true);
     console.log(this.favItems);
+    this.allProducts = this.newService.phones;
   }
 }

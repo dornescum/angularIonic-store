@@ -9,16 +9,18 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
+import {BarRatingModule} from 'ngx-bar-rating';
 // import {ProductComponent} from 'src/app/components/product/product.component';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        IonicModule,
-        HomePageRoutingModule,
-        CartPageModule,
-    ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    HomePageRoutingModule,
+    CartPageModule,
+    BarRatingModule,
+  ],
   declarations: [HomePage]
 })
 export class HomePageModule {}

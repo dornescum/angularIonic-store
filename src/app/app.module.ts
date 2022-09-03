@@ -19,11 +19,12 @@ import {StoreModule} from '@ngrx/store';
 import {cartReducer} from 'src/app/cart-store/cart.reducer';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
 
+import {BarRatingModule} from 'ngx-bar-rating';
 
 
 @NgModule({
   declarations: [AppComponent, ProductComponent], // eslint-disable-next-line max-len
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, FormsModule, StoreModule.forRoot({cartEntries: cartReducer}), CartPageModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, FormsModule, StoreModule.forRoot({cartEntries: cartReducer}), CartPageModule, BarRatingModule],
   providers: [{
     provide: RouteReuseStrategy, useClass: IonicRouteStrategy
   }, ApiService, LocalPhonesService, LocalService],
