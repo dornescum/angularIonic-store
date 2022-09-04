@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+
 
 
 @Component({
@@ -10,6 +11,7 @@ import { AlertController } from '@ionic/angular';
 export class LoginPage implements OnInit {
   isLoading = false;
   isLogin = true;
+  // @Output() registerEmail = new EventEmitter<string>();
 
   constructor(private router: Router, private alertController: AlertController) {
   }
@@ -27,7 +29,11 @@ export class LoginPage implements OnInit {
     const email = form.value.email;
     const password = form.value.password;
     console.log('Email : ', email, 'Password : ', password);
+    // this.registerEmail = email;
 
+    // this.registerEmail.emit(email);
+    // console.log(this.registerEmail);
+    // this.sendInfo(this.registerEmail);
     if (email && password) {
       console.log('sent');
       this.isLoading = false;
@@ -42,9 +48,9 @@ export class LoginPage implements OnInit {
     }
   }
   onSwitchAuthMode(){
-    console.log('loading Is : ',this.isLoading);
+    // console.log('loading Is : ',this.isLoading);
     this.isLogin = !this.isLogin;
-    console.log('loading Is : ',this.isLoading);
+    // console.log('loading Is : ',this.isLoading);
   }
   onLogin() {
     if (!this.isLoading){
@@ -67,4 +73,5 @@ export class LoginPage implements OnInit {
 
     await alert.present();
   }
+
 }

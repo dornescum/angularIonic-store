@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
     this.product = this.newService.phones.find((x) => x.id === this.id);
-    console.log(this.product);
+    // console.log(this.product);
   }
 
   async buyProduct(product: Product) {

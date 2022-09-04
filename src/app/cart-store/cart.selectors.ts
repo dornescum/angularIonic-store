@@ -12,9 +12,9 @@ export const selectTotalPrice = createSelector(
   createFeatureSelector('cartEntries'),
   (state: Product[]) => {
     let totalPrice = 0;
-    console.log(state);
+    // console.log(state);
     state.forEach(p => totalPrice += p.price);
-    console.log(totalPrice);
+    // console.log(totalPrice);
     return totalPrice;
   }
 );

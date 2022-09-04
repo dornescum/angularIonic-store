@@ -64,10 +64,25 @@
       text-decoration: none;
       color: $light-color;
       padding: 0 .5rem;
+      position: relative;
+      font-weight: 700;
 
       ion-icon {
         padding-right: .2rem;
         margin: 0 .3rem;
+      }
+      span {
+        position: absolute;
+        top: -0.5rem;
+        left: 1.4rem;
+        background: red;
+        border-radius: 50%;
+        height: 18px;
+        width: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
       }
     }
   }

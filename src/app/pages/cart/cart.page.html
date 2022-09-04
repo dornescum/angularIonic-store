@@ -1,59 +1,32 @@
-<!--<ion-header class="header">-->
-<!--  <ion-menu-button class="menu" color="light"></ion-menu-button>-->
-<!--  <ion-toolbar color="dark">-->
-<!--    <ion-title>Ecommerce</ion-title>-->
-<!--  </ion-toolbar>-->
-<!--</ion-header>-->
 <app-header></app-header>
 <ion-content fullscreen="true">
-  <h1 class="title">Cart</h1>
+  <h1 class="title">Your Cart</h1>
+<ion-grid>
+  <ion-row>
+    <ion-col size-sm="12" size-md="6" offset-md="3">
+      <div class="cart-items">
+        <ion-card mode="ios" *ngFor="let entry of cartEntries$ | async">
+          <ion-card-content>
+            <div class="item-img">
+              <ion-img [src]="entry.product.img"></ion-img>
+            </div>
+            <div class="item-info">
+              <h6>  {{ entry.product.title }}</h6>
 
-  <div class="cart-items">
-    <ion-card mode="ios" *ngFor="let entry of cartEntries$ | async">
-      <ion-card-content>
-        <div class="item-img">
-<!--          <img src="{{entry.product.img}}" />-->
-          <ion-img [src]="entry.product.img"></ion-img>
-        </div>
-        <div class="item-info">
-          <h3>  {{ entry.product.title }}</h3>
-          <div class="qty-selector">
-            <ion-button fill="clear" (click)="removeEntries(entry)">-</ion-button>
-<!--            FIXME identifica produsele -->
-            <ion-label>{{entry.count }}</ion-label>
-            <ion-button fill="clear" (click)="addEntries(entry)">+</ion-button>
-<!--            <p>{{countProduct$ | async}}</p>-->
-          </div>
-        </div>
-
-      </ion-card-content>
-    </ion-card>
-
-    <ion-button expand="block" class="main-button" (click)="clearEntries()" routerDirection="forward" color="dark">Clear</ion-button>
-
-
-    <!--    <ion-card mode="md">-->
-<!--      <ion-card-content>-->
-<!--        <div class="item-img">-->
-<!--          <img src="../../assets/img/2.jpg" />-->
-<!--        </div>-->
-
-<!--        <div class="item-info">-->
-<!--          <p>Female t-shirt</p>-->
-<!--          <p>Bata</p>-->
-<!--          <p>$44.00</p>-->
-
-<!--          <div class="qty-selector">-->
-<!--            <ion-button fill="clear">-</ion-button>-->
-<!--            <ion-label>1</ion-label>-->
-<!--            <ion-button fill="clear">+</ion-button>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </ion-card-content>-->
-<!--    </ion-card>-->
-
-
-  </div>
+              <div class="qty-selector">
+                <ion-button fill="clear" (click)="removeEntries(entry)">-</ion-button>
+                <ion-label>{{entry.count }}</ion-label>
+                <ion-button fill="clear" (click)="addEntries(entry)">+</ion-button>
+                <!--            <p>{{countProduct$ | async}}</p>-->
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        <ion-button expand="block" class="main-button" (click)="clearEntries()" routerDirection="forward" color="dark">Clear</ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
 <ion-footer translucent="true" class="ion-no-border" mode="md">
   <ion-toolbar color="translucent">

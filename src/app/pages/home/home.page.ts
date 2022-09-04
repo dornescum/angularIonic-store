@@ -19,7 +19,8 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.favItems = this.newService.phones.filter(item=>item.favorite === true);
-    console.log(this.favItems);
+    // console.log(this.favItems);
     this.allProducts = this.newService.phones;
   }
+
 }

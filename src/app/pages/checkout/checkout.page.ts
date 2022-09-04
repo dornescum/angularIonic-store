@@ -53,19 +53,4 @@ export class CheckoutPage implements OnInit {
       this.isLoading = true;
     }
   }
-  // onSwitchAuthMode() {
-  //   console.log('loading Is : ', this.isLoading);
-  //   this.isLogin = !this.isLogin;
-  //   console.log('loading Is : ', this.isLoading);
-  // }
-  // onLogin() {
-  //   if (!this.isLoading) {
-  //     this.router.navigate(['/home']);
-  //     console.log('loading Is : ', this.isLoading);
-  //   } else {
-  //     // this.router.navigate(['/home']);
-  //     alert('error');
-  //     console.log('loading Is : ', this.isLoading);
-  //   }
-  // }
 }
