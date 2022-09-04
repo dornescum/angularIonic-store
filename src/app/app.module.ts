@@ -21,6 +21,8 @@ import {CartPageModule} from 'src/app/pages/cart/cart.module';
 
 import {BarRatingModule} from 'ngx-bar-rating';
 
+// import {CardComponent} from 'src/app/components/card/card.component';
+
 
 @NgModule({
   declarations: [AppComponent, ProductComponent], // eslint-disable-next-line max-len

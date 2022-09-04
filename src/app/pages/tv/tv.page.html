@@ -3,18 +3,19 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let tv of tvs; let i = index" size="6" size-lg="3" size-md="4">
-        <ion-card class="card">
-          <ion-img [src]="tv.img" class="card-img"></ion-img>
-          <ion-card-header>
-            <ion-label>Price : {{tv.price | currency}}</ion-label>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-button [routerLink]="['product', tv.id]" size="full" color="dark"
-            >{{tv.title}}</ion-button
-            >
-          </ion-card-content>
-        </ion-card>
+      <ion-col *ngFor="let tv of tvs; let i = index" size="6" size-lg="3" size-md="4" class="favorite">
+        <app-card [product]="tv"></app-card>
+<!--        <ion-card class="card">-->
+<!--          <ion-img [src]="tv.img" class="card-img"></ion-img>-->
+<!--          <ion-card-header>-->
+<!--            <ion-label>Price : {{tv.price | currency}}</ion-label>-->
+<!--          </ion-card-header>-->
+<!--          <ion-card-content>-->
+<!--            <ion-button [routerLink]="['product', tv.id]" size="full" color="dark"-->
+<!--            >{{tv.title}}</ion-button-->
+<!--            >-->
+<!--          </ion-card-content>-->
+<!--        </ion-card>-->
       </ion-col>
     </ion-row>
   </ion-grid>
