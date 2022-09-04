@@ -8,6 +8,7 @@ import { TvPageRoutingModule } from './tv-routing.module';
 
 import { TvPage } from './tv.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
+import {CardComponent} from 'src/app/components/card/card.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import {CartPageModule} from 'src/app/pages/cart/cart.module';
     TvPageRoutingModule,
     CartPageModule
   ],
-  declarations: [TvPage]
+  declarations: [TvPage, CardComponent]
 })
 export class TvPageModule {}
