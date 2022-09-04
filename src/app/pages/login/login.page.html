@@ -1,28 +1,14 @@
-<!--<ion-split-pane contentId="main-content">-->
-<!--  <ion-menu contentId="main-content" type="overlay">-->
-
-
-    <ion-header class="header">
-<!--      FIXME show button ^&^&-->
-<!--      <button ion-button menuToggle>-->
-<!--        <ion-icon name="menu"></ion-icon>-->
-<!--      </button>-->
+<ion-header class="header">
       <ion-menu-button class="menu" color="light"></ion-menu-button>
-<!--      ==========-->
       <ion-toolbar color="dark">
         <!--    <ion-title>Login</ion-title>-->
         <ion-title>{{isLogin ? 'Login': 'Sign up'}}</ion-title>
       </ion-toolbar>
     </ion-header>
-<!--  </ion-menu>-->
-
-<!--</ion-split-pane>-->
-
 
 
 
 <ion-content  class="ion-padding-start ion-padding-end">
-<!--  <ion-button (click)="presentAlert()">Click Me</ion-button>-->
 
   <form #formRefrence="ngForm" (ngSubmit)="onSubmit(formRefrence)">
     <ion-grid class="login-main">
@@ -80,11 +66,5 @@
       >Login</ion-button>
     </ion-grid>
   </form>
-  <!--    <ion-button color="primary" fill="clear" expand="block"> Switch to login</ion-button>-->
-  <!--    <ion-button color="dark" expand="block" size="large" (click)="onLoading()" [routerLink]="['/home']"> Login</ion-button>-->
 
-  <!--  (click)="onLoading()"-->
-  <!--  <pre>-->
-  <!--    {{email - password}}-->
-  <!--  </pre>-->
 </ion-content>

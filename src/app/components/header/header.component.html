@@ -2,11 +2,6 @@
   <ion-menu-button class="menu" color="light"></ion-menu-button>
   <ion-toolbar color="dark">
     <div class="header-display">
-<!--      <ion-title>-->
-<!--        <a routerLink="/home" class="header-title">-->
-<!--          Ecommerce-->
-<!--        </a>-->
-<!--      </ion-title>-->
       <div class="header-title">
         <a routerLink="/home" class="header-link">
           Ecommerce
@@ -15,7 +10,11 @@
       <div class="header-cart">
         <a class="header-product" routerLink="/cart">
           <ion-icon name="cart" slot="end"></ion-icon>
-          {{countProduct$ | async}}</a>
+<!--          [ngStyle]="{background: countProduct$ < 0 ? 'red':'#222428', color: countProduct$ < 0 ? 'red':'#222428'}"-->
+          <span >
+             {{countProduct$ | async}}
+          </span>
+         </a>
 <!--        FIXME display none if vslue === 0-->
 <!--        [ngStyle]="{color: totalPrice$ < 0 ? 'white':'black'}"-->
 

@@ -29,13 +29,16 @@ ion-content {
     ion-card-content {
       display: flex;
       position: relative;
-      //flex-direction: column;
+      flex-direction: column;
       justify-content: space-evenly;
+      padding: 0;
 
       .item-img {
         display: flex;
         align-items: center;
         //margin-right: 16px;
+
+
 
         //img {
         //  object-fit: cover;
@@ -44,34 +47,35 @@ ion-content {
         //  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.16);
         //}
       }
-
-      //.item-info {
-      //  p {
-      //    font-size: 16px;
+      //p {
+      //  //width: 50%;
+      //  margin: 1rem;
+      //  display: none;
+      //  @media (min-width: 360px) {
+      //   display: none;
       //  }
-      //
-      //  p:nth-child(1) {
-      //    color: #434343;
+      //  @media (min-width: 320px) {
+      //   display: none;
       //  }
-      //
-      //  p:nth-child(2) {
-      //    color: #919191;
+      //  @media (min-width: 768px) {
+      //    font-size: 18px;
+      //    display: block;
       //  }
-      //
-      //  p:nth-child(3) {
-      //    color: var(--ion-color-danger);
+      //  @media (min-width: 1024px) {
+      //   font-size: 12px;
       //  }
-
-      //
+      //  @media (min-width: 1920px) {
+      //    font-size: 22px;
+      //  }
       //}
       .item-info{
         display: flex;
         flex-direction: column;
         text-align: center;
-        h3 {
-          margin: 2rem 1rem;
+        h6 {
+          margin: 1rem 0 .2rem 0;
           text-transform: capitalize;
-          font-size: 32px;
+          //font-size: 32px;
           font-weight: bolder;
         }
       }
@@ -107,7 +111,23 @@ ion-content {
 ion-img {
   object-fit: cover;
   height: 12rem;
-  width: 12rem;
+  //width: 12rem;
+  width: 100%;
+  @media (min-width: 320px) {
+    width: 100%;
+  }
+  //@media (min-width: 320px) {
+  //  display: none;
+  //}
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+  @media (min-width: 1024px) {
+    font-size: 12px;
+  }
+  @media (min-width: 1920px) {
+    font-size: 22px;
+  }
 
 }
 
@@ -118,4 +138,7 @@ ion-footer {
   .main-button::after {
     box-shadow: none !important;
   }
+}
+.scroll-y {
+  padding: 1rem .2rem;
 }

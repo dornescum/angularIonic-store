@@ -19,7 +19,7 @@ export class CartPage implements OnInit {
   constructor(private store: Store) {
     this.cartEntries$ = store.select(selectGroupedCartEntries);
     this.countProduct$ = store.select(selectCountProducts);
-    console.log(this.cartEntries$);
+    // console.log(this.cartEntries$);
   }
 
   ngOnInit() {

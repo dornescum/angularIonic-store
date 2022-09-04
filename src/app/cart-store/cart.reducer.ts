@@ -28,9 +28,9 @@ export const cartReducer = createReducer(initialCartEntries,
     const setName = async () => {
       await Preferences.set({
         key: JSON.stringify(product.id),
-        value: JSON.stringify(product.title),
+        value: JSON.stringify(product),
       });
-      console.log('set values');
+      // console.log('set values');
     };
     setName();
     return entriesClone;
