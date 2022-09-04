@@ -10,7 +10,7 @@ import { LaptopsPageRoutingModule } from './laptops-routing.module';
 
 import { LaptopsPage } from './laptops.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
-// import {CardComponent} from 'src/app/components/card/card.component';
+import {CardComponent} from 'src/app/components/card/card.component';
 
 @NgModule({
     imports: [
@@ -21,8 +21,8 @@ import {CartPageModule} from 'src/app/pages/cart/cart.module';
         CartPageModule
     ],
     exports: [
-        // CardComponent
+        CardComponent
     ],
-    declarations: [LaptopsPage]
+    declarations: [LaptopsPage, CardComponent]
 })
 export class LaptopsPageModule {}
