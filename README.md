@@ -5,7 +5,7 @@
 global packages:
 `npm list -g --depth=0`
 **OR**
-`npm root -g | gci` in Power Shell
+`npm root -g | gci` in PowerShell
 
 ## Requirements
 >@angular/cli@ ^14.0.0 `npm install -g @angular/cli`
@@ -70,7 +70,7 @@ If there was a previous installation of the Ionic CLI, **it will need to be unin
 
 > npm install @ionic/angular@latest --save
 
-When using **Ionic Framework in an Angular project**, install the latest @ionic/angular package from npm. This comes with all of the Ionic Framework components and Angular specific services and features.
+When using **Ionic Framework in an Angular project**, install the latest @ionic/angular package from npm. This comes with all the Ionic Framework components and Angular specific services and features.
 
 
 # For adding Ionic to an already existing Angular project, use the Angular CLI's ng add feature.
