@@ -1,7 +1,6 @@
 <app-header></app-header>
 
-<!--======-->
-<ion-content fullscreen>
+<ion-content fullscreen="true">
 
   <ion-grid>
     <ion-row>
@@ -28,28 +27,17 @@
                 <ion-icon name="star" style="color: red"></ion-icon>
               </li>
             </ul>
-            <!--            <p class="favorite-title">{{item.title}}</p>-->
-            <!--            FIXME rating error -->
-            <!--<p>rating {{item.rating}}</p>-->
-            <!--            <bar-rating [(rate)]="item.rating" [max]="5"></bar-rating>-->
-            <!--            <bar-rating [(rate)]="item.rating" [max]="item.rating" style="color: red">-->
-            <!--              <i class="bi bi-star-fill" style="margin: 2px; color: #edb867"></i>-->
-            <!--            </bar-rating>-->
-
 
             <p class="favorite-old-price">Old price : {{(item.price * taxPrice) + item.price | currency}}</p>
             <div class="favorite-actions">
               <p class="favorite-price">{{item.price | currency}}</p>
-<!--              <ion-button [routerLink]="['/', item.tag, 'product', item.id]" color="dark" class="favorite-action">-->
                 <ion-icon name="cart" style="color: black; height: 18px" class="favorite-action"></ion-icon>
-<!--              </ion-button>-->
             </div>
           </div>
         </ion-card>
       </ion-col>
     </ion-row>
 
-    <!--    ===========-->
     <div class="products">
       <h3> Products
 <!--        FIXME padding icon -->
@@ -73,7 +61,6 @@
               </li>
             </ul>
             <p class="favorite-old-price">Old price : {{(item.price * taxPrice) + item.price | currency}}</p>
-<!--            <p class="favorite-price">{{item.price | currency}}</p>-->
             <div class="favorite-actions">
               <p class="favorite-price">{{item.price | currency}}</p>
               <ion-icon name="cart" style="color: black; height: 18px" class="favorite-action"></ion-icon>

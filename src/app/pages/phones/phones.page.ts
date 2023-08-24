@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {NewServiceService} from 'src/app/services/new-service.service';
+import {Product} from '../../utils/interface';
+import {TestingService} from '../../services/testing.service';
 
 @Component({
   selector: 'app-phones',
@@ -8,12 +10,19 @@ import {NewServiceService} from 'src/app/services/new-service.service';
   styleUrls: ['./phones.page.scss'],
 })
 export class PhonesPage implements OnInit {
-  phones: any = [];
-  taxPrice= Math.random();
-  constructor(private router: Router, private localService: NewServiceService) { }
+  phones: Product[]= [];
+
+  constructor( private newApi: TestingService) { }
 
   ngOnInit() {
-    this.phones = this.localService.phones.filter(item=>item.tag ==='phones');
+    this.newApi.getAllProducts().subscribe(
+      (data: Product[]) => {
+        this.phones = data.filter((item: Product) => item.tag === 'phones');
+      },
+      (error) => {
+        console.error('Error fetching laptops: ', error);
+      }
+    );
   }
 
 }

@@ -38,11 +38,4 @@ export class ApiService {
     }));
   }
 
-  // async getProductId(index: string) {
-  //   const data = await fetch(this.url);
-  //   const res = await data.json();
-  //   console.log(res);
-  //   const result = res.filter((item: any) => item.id === index);
-  //   return result;
-  // }
 }

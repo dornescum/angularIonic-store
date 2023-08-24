@@ -1,3 +1,5 @@
+<!--suppress ALL-->
+
 <ion-card [routerLink]="['/', product.tag, 'product', product.id]" >
   <ion-card-title *ngIf="product.flashSale">Sale</ion-card-title>
   <ion-img [src]="product.img" class="favorite-img"></ion-img>

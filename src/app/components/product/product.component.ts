@@ -5,6 +5,7 @@ import {Store} from '@ngrx/store';
 import {addProduct} from 'src/app/cart-store/cart.actions';
 import {Product} from 'src/app/shared/Product';
 import {ToastController} from '@ionic/angular';
+import {TestingService} from '../../services/testing.service';
 
 @Component({
   selector: 'app-product', templateUrl: './product.component.html', styleUrls: ['./product.component.scss'],
@@ -14,13 +15,20 @@ export class ProductComponent implements OnInit {
   product: any = [];
 
   // eslint-disable-next-line max-len
-  constructor(private route: ActivatedRoute, private newService: NewServiceService, private store: Store, private toastController: ToastController) {
+  constructor(private route: ActivatedRoute, private newService: NewServiceService, private store: Store, private toastController: ToastController,
+              private newApi: TestingService) {
   }
 
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
-    this.product = this.newService.phones.find((x) => x.id === this.id);
-    // console.log(this.product);
+    this.product = this.newApi.getProductId(this.id).subscribe(
+      (data: Product) => {
+        this.product = data[0];
+      },
+      (error) => {
+        console.error('Error fetching laptops: ', error);
+      }
+    );
   }
 
   async buyProduct(product: Product) {
@@ -29,6 +37,6 @@ export class ProductComponent implements OnInit {
       message: 'Added to cart.',
       duration: 2000
     });
-    toast.present();
+    await toast.present();
   }
 }
