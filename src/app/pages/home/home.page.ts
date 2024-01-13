@@ -17,11 +17,13 @@ export class HomePage implements OnInit {
   constructor(private newService: NewServiceService, private newApi: TestingService) {
   }
 
+  // todo add individual route
   ngOnInit() {
     this.newApi.getAllProducts().subscribe(
       (data: any) => {
-        this.allProducts = data;
-        this.favItems = data.filter((item: any) => item.favorite === 1);
+        console.log('data home page', data);
+        this.allProducts = data.data;
+        // this.favItems = data.filter((item: any) => item.favorite === 1);
       },
       (error) => {
         console.error('Error fetching laptops: ', error);

@@ -16,7 +16,7 @@ export class TvPage implements OnInit {
   ngOnInit() {
     this.newApi.getAllProducts().subscribe(
       (data: Product[]) => {
-        this.tvs = data.filter((item: Product) => item.tag === 'tvs');
+        this.tvs = data.filter((item: Product) => item.tag === 'tv');
       },
       (error) => {
         console.error('Error fetching laptops: ', error);

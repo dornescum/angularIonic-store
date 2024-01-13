@@ -18,12 +18,24 @@ export class TestingService {
   constructor(private http: HttpClient) {}
 
   getAllProducts() {
-    return this.http.get<any>(this.url).pipe(map((res: Product[]) => res));
-  }
-
-  getProductId(index: string) {
-    return this.http.get<Product>(this.url).pipe(map((res: Product | any) => {
-     return res.filter((x: any) => x.id === index);
+    console.log('url from service ',`${this.url}/products`);
+    return this.http.get<any>(`${this.url}/products`).pipe(map((res:  any) => {
+      console.log(res.data);
+      return res;
     }));
   }
+
+  getProductId(index: string | number) {
+    console.log('url for one ', `${this.url}/products/${index}`);
+    return this.http.get<Product>(`${this.url}/products/${index}`).pipe(map((res: Product | any) => {
+      console.log('red one ', res.data[0]);
+     return res.data[0];
+    }));
+  }
+
+  // getProductId(index: string) {
+  //   return this.http.get<Product>(this.url).pipe(map((res: Product | any) => {
+  //    return res.filter((x: any) => x.id === index);
+  //   }));
+  // }
 }
