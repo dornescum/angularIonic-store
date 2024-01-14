@@ -5,7 +5,7 @@ import {Store} from '@ngrx/store';
 import {addProduct} from 'src/app/cart-store/cart.actions';
 import {Product} from 'src/app/shared/Product';
 import {ToastController} from '@ionic/angular';
-import {ProductService} from '../../services/testing.service';
+import {ProductService} from '../../services/products.service';
 
 @Component({
   selector: 'app-product', templateUrl: './product.component.html', styleUrls: ['./product.component.scss'],

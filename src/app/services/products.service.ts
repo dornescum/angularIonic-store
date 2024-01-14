@@ -18,7 +18,7 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getAllProducts() {
-    console.log('url from service ',`${this.url}/products`);
+    // console.log('url from service ',`${this.url}/products`);
     return this.http.get<any>(`${this.url}/products`).pipe(map((res:  {data: Product[]}) => {
       console.log(res.data);
       return res.data;
@@ -26,10 +26,18 @@ export class ProductService {
   }
 
   getProductId(index: string | number) {
-    console.log('url for one ', `${this.url}/products/${index}`);
+    // console.log('url for one ', `${this.url}/products/${index}`);
     return this.http.get<Product>(`${this.url}/products/${index}`).pipe(map((res: Product | any) => {
       console.log('red one ', res.data[0]);
      return res.data[0];
+    }));
+  }
+
+  getCategoryProducts(category: string) {
+    // console.log('url from service ',`${this.url}/products`);
+    return this.http.get<any>(`${this.url}/products/category${category}`).pipe(map((res:  {data: Product[]}) => {
+      console.log(res.data);
+      return res.data;
     }));
   }
 

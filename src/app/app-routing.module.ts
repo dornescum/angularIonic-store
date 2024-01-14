@@ -53,6 +53,7 @@ const routes: Routes = [
     path: 'phones',
     loadChildren: () => import('./pages/phones/phones.module').then( m => m.PhonesPageModule)
   },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' } // Redirect to a default route
 
 
 ];
