@@ -4,31 +4,27 @@
     <ion-row>
       <ion-col size-sm="12" size-md="6" offset-md="3">
         <ion-card *ngIf="product" class="product">
-          <ion-img [src]="product.img" class="product-img"></ion-img>
+          <ion-img [src]="product?.img" class="product-img"></ion-img>
           <div class="product-header">
             <ion-card-title class="product-title ion-text-center">{{
-              product.title
-              }}</ion-card-title>
+              product.title }}</ion-card-title>
             <ion-button [routerLink]="['', product.tag]" fill="clear" class="product-tag"
                         color="light">
               <ion-icon name="chevron-back-outline"></ion-icon>
-              {{product.tag}}
+              {{product?.tag}}
             </ion-button>
           </div>
-<!--          <ion-card-title class="product-title ion-text-center">{{-->
-<!--            product.title-->
-<!--          }}</ion-card-title>-->
           <ion-card-content>
             <ion-label class="product-price">
               Price :
               <span [ngStyle]="{color: product.price> 400 ? 'red':'black'}">
-                  {{ product.price | currency }}
+                  {{ product?.price | currency }}
               </span>
 
             </ion-label>
             <br />
             <div class="product-desc">
-              {{ product.desc }}
+              {{ product?.desc }}
             </div>
             <ion-button size="full" color="dark" (click)="buyProduct(product)">Buy</ion-button>
           </ion-card-content>
@@ -37,3 +33,4 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+<!--<p>{{product?.title}}</p>-->

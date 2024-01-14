@@ -34,7 +34,7 @@ index b9e2d46..610efae 100644
  import { PhonesPageRoutingModule } from './pages/phones/phones-routing.module';
 +import {CardsPageRoutingModule} from 'src/app/pages/cards/cards-routing.module';
 +import {ProductComponent} from 'src/app/components/product/product.component';
- 
+
  const routes: Routes = [
    {
 @@ -29,6 +31,10 @@ const routes: Routes = [
@@ -65,8 +65,8 @@ index 39606b4..0e5201c 100644
  import { PhonePipe } from './shared/pipes/phone.pipe';
  import {ApiService} from 'src/app/services/api.service';
 +import {ProductComponent} from 'src/app/components/product/product.component';
- 
- 
+
+
  @NgModule({
 -  declarations: [AppComponent, PhonePipe],
 -  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule],
@@ -118,8 +118,8 @@ index 5cfd581..eb9594e 100644
 +import {LocalService} from 'src/app/services/local.service';
 +import {LocalPhonesService} from 'src/app/services/localPhones.service';
 +import {NewServiceService} from 'src/app/services/new-service.service';
- 
- 
+
+
  @Component({
 @@ -11,24 +14,22 @@ export class ProductComponent implements OnInit {
    title = '';
@@ -127,13 +127,13 @@ index 5cfd581..eb9594e 100644
    products: any = [];
 -  product =[];
 +  product: any = [];
- 
+
 -  constructor(private route: ActivatedRoute, private apiService: ApiService) {
 +
 +  constructor(private localService: LocalService, private route: ActivatedRoute,
 +              private localPhoneService: LocalPhonesService, private newService: NewServiceService) {
    }
- 
+
    ngOnInit() {
      this.id = this.route.snapshot.paramMap.get('id');
 -    console.log(this.id);
@@ -155,22 +155,22 @@ index 5cfd581..eb9594e 100644
 +    this.product = this.newService.phones.find(x => x.id===this.id);
      console.log(this.product);
    }
- 
+
 diff --git a/src/app/pages/cards/cards-routing.module.ts b/src/app/pages/cards/cards-routing.module.ts
 index dd4daea..72e5598 100644
 --- a/src/app/pages/cards/cards-routing.module.ts
 +++ b/src/app/pages/cards/cards-routing.module.ts
 @@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
- 
+
  import { CardsPage } from './cards.page';
  import {ProductComponent} from 'src/app/components/product/product.component';
 +import {HttpClientModule} from '@angular/common/http';
- 
+
  const routes: Routes = [
    {
 @@ -17,7 +18,7 @@ const routes: Routes = [
  ];
- 
+
  @NgModule({
 -  imports: [RouterModule.forChild(routes)],
 +  imports: [RouterModule.forChild(routes), HttpClientModule],
@@ -187,11 +187,11 @@ index 475295d..060f220 100644
  import { FormsModule } from '@angular/forms';
 +import { BrowserModule } from '@angular/platform-browser';
 +
- 
+
  import { IonicModule } from '@ionic/angular';
- 
+
  import { CardsPageRoutingModule } from './cards-routing.module';
- 
+
  import { CardsPage } from './cards.page';
 -
 +// FIXME cardsPageRoutingModule
@@ -239,9 +239,9 @@ index 65e030c..83b34a8 100644
 +import {LocalPhonesService} from 'src/app/services/localPhones.service';
 +import {LocalService} from 'src/app/services/local.service';
 +import {ActivatedRoute, Router} from '@angular/router';
- 
- 
- 
+
+
+
 @@ -10,14 +13,20 @@ import {ApiService} from 'src/app/services/api.service';
  })
  export class CardsPage implements OnInit {
@@ -250,28 +250,28 @@ index 65e030c..83b34a8 100644
 -  constructor(private apiPhones: ApiService) { }
 + phones: any = [];
 +  constructor(private localService: LocalService, private router: Router, private route: ActivatedRoute) { }
- 
+
    ngOnInit() {
 -    this.apiPhones.getProduct().subscribe(items =>{
 +    this.localService.getPhones().subscribe(items =>{
        this.phones = items;
      });
    }
- 
+
 +  onSelect(id){
 +    this.router.navigate(['product', id],{relativeTo:this.route});
 +    // this.router.navigate(['product', id],{relativeTo:this.route});
 +    // this.router.navigateByUrl(`cards/product/${id}`);
 +  }
 +
- 
+
  }
 diff --git a/src/app/pages/phones/items/items.component.html b/src/app/pages/phones/items/items.component.html
 index 486bcec..966b3e8 100644
 --- a/src/app/pages/phones/items/items.component.html
 +++ b/src/app/pages/phones/items/items.component.html
 @@ -4,5 +4,5 @@
- 
+
  <div>
    <h1>test</h1>
 -   <p>{{product.tag}}</p>
@@ -290,23 +290,23 @@ index 3ddcd28..13bb66a 100644
 +import {HttpClient} from '@angular/common/http';
 +import {map} from 'rxjs/operators';
 +import {Product} from 'src/app/shared/Product';
- 
+
  @Injectable({
    providedIn: 'root',
 @@ -10,34 +10,32 @@ export class ApiService {
    url = 'https://electronis-api.herokuapp.com/api/phones';
    urlAll = 'https://electronis-api.herokuapp.com/api/all';
- 
+
 -  constructor(private http: HttpClient) {}
 +  constructor(private http: HttpClient) {
 +  }
- 
+
    async getInfo() {
      const data = await fetch(this.url);
      const res = await data.json();
      console.log(res);
    }
-- 
+-
 +
    getProduct() {
 -    return this.http.get<Product>(this.url).pipe(
@@ -320,7 +320,7 @@ index 3ddcd28..13bb66a 100644
 +      return res;
 +    }));
    }
- 
+
    getAllProducts() {
      return this.http.get<any>(this.urlAll).pipe(map((res: any) => res));
    }
@@ -339,7 +339,7 @@ index 3ddcd28..13bb66a 100644
 +      console.log(res);
 +    }));
    }
- 
+
    // async getProductId(index: string) {
 diff --git a/src/app/services/local.service.ts b/src/app/services/local.service.ts
 index d053108..3574ee9 100644
@@ -352,11 +352,11 @@ index d053108..3574ee9 100644
 +import {Injectable} from '@angular/core';
 +import {Local} from 'src/app/shared/Local';
 +import {Observable} from 'rxjs';
- 
+
  @Injectable({
    providedIn: 'root',
 @@ -7,9 +9,11 @@ import { Injectable } from '@angular/core';
- 
+
  export class LocalService {
    private url = '/assets/data/localPhones.json';
 -  constructor(private http: HttpClient) {}
@@ -370,7 +370,7 @@ index d053108..3574ee9 100644
 +    return this.http.get<Local[]>(this.url);
    }
  }
-- 
+-
 \ No newline at end of file
 diff --git a/src/app/services/localPhones.service.ts b/src/app/services/localPhones.service.ts
 index fe58ed8..8c1f5f3 100644
@@ -415,14 +415,14 @@ index ba76b09..0000000
 @@ -1,16 +0,0 @@
 -import { TestBed } from '@angular/core/testing';
 -
--import { TestingService } from './testing.service';
+-import { ProductService } from './testing.service';
 -
--describe('TestingService', () => {
--  let service: TestingService;
+-describe('ProductService', () => {
+-  let service: ProductService;
 -
 -  beforeEach(() => {
 -    TestBed.configureTestingModule({});
--    service = TestBed.inject(TestingService);
+-    service = TestBed.inject(ProductService);
 -  });
 -
 -  it('should be created', () => {
@@ -455,7 +455,7 @@ index be09788..0e4a2e6 100644
      "desc": "testing local"
    },
 -
--  
+-
    {
      "id": "phone-2",
      "title": "iphone 2",
@@ -480,6 +480,6 @@ index be09788..0e4a2e6 100644
 -
 +  }
  ]
--- 
+--
 2.37.1.windows.1
 

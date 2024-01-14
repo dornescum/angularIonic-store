@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {NewServiceService} from 'src/app/services/new-service.service';
-import {TestingService} from '../../services/testing.service';
+import {ProductService} from '../../services/testing.service';
 import {Product} from '../../utils/interface';
 
 @Component({
@@ -12,7 +12,7 @@ import {Product} from '../../utils/interface';
 export class LaptopsPage implements OnInit {
   laptops: Product[] = [];
 
-  constructor( private newApi: TestingService) { }
+  constructor( private newApi: ProductService) { }
 
   ngOnInit() {
 

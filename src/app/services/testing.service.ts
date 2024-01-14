@@ -10,7 +10,7 @@ import {environment} from '../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class TestingService {
+export class ProductService {
 
   // url = 'http://localhost:3000/api/v1/ionic-app';
   url = environment.serverUrl;
@@ -19,9 +19,9 @@ export class TestingService {
 
   getAllProducts() {
     console.log('url from service ',`${this.url}/products`);
-    return this.http.get<any>(`${this.url}/products`).pipe(map((res:  any) => {
+    return this.http.get<any>(`${this.url}/products`).pipe(map((res:  {data: Product[]}) => {
       console.log(res.data);
-      return res;
+      return res.data;
     }));
   }
 

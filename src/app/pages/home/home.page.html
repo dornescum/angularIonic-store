@@ -27,7 +27,6 @@
                 <ion-icon name="star" style="color: red"></ion-icon>
               </li>
             </ul>
-
             <p class="favorite-old-price">Old price : {{(item.price * taxPrice) + item.price | currency}}</p>
             <div class="favorite-actions">
               <p class="favorite-price">{{item.price | currency}}</p>
@@ -50,7 +49,8 @@
     <ion-row>
       <ion-col *ngFor="let item of allProducts"
                class="favorite" offset-md="0" size="6" size-lg="3" size-md="6">
-        <ion-card [routerLink]="['/', item.tag, 'product', item.id]">
+<!--        <ion-card [routerLink]="['/', item.tag, 'product', item.id]">-->
+        <ion-card (click)="navigateToProduct(item)">
           <ion-card-title *ngIf="item.flashSale">Sale</ion-card-title>
           <ion-img [src]="item.img" class="favorite-img"></ion-img>
           <div class="favorite-footer">

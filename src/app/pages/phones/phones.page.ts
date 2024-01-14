@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {NewServiceService} from 'src/app/services/new-service.service';
 import {Product} from '../../utils/interface';
-import {TestingService} from '../../services/testing.service';
+import {ProductService} from '../../services/testing.service';
 
 @Component({
   selector: 'app-phones',
@@ -12,7 +12,7 @@ import {TestingService} from '../../services/testing.service';
 export class PhonesPage implements OnInit {
   phones: Product[]= [];
 
-  constructor( private newApi: TestingService) { }
+  constructor( private newApi: ProductService) { }
 
   ngOnInit() {
     this.newApi.getAllProducts().subscribe(
