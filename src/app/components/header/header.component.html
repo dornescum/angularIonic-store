@@ -10,13 +10,10 @@
       <div class="header-cart">
         <a class="header-product" routerLink="/cart">
           <ion-icon name="cart" slot="end"></ion-icon>
-<!--          [ngStyle]="{background: countProduct$ < 0 ? 'red':'#222428', color: countProduct$ < 0 ? 'red':'#222428'}"-->
           <span >
              {{countProduct$ | async}}
           </span>
          </a>
-<!--        FIXME display none if vslue === 0-->
-<!--        [ngStyle]="{color: totalPrice$ < 0 ? 'white':'black'}"-->
 
         <a class="header-product" routerLink="/cart">
           <ion-icon name="logo-euro" slot="end"></ion-icon>

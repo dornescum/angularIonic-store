@@ -2,7 +2,6 @@ import {createReducer, on} from '@ngrx/store';
 import {Product} from 'src/app/shared/Product';
 import {addProduct, removeProduct, clearCart} from 'src/app/cart-store/cart.actions';
 import { Preferences } from '@capacitor/preferences';
-// import {retry} from 'rxjs/operators';
 
 export const initialCartEntries: Product[] = [];
 

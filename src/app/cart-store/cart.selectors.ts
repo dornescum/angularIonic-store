@@ -6,26 +6,20 @@ export interface ProductGroup {
   count: number;
 }
 
-export const selectCountProducts = createSelector(createFeatureSelector('cartEntries'), (state: Product[]) => state.length);
+export const selectCountProducts = createSelector(createFeatureSelector('cartEntries'),
+  (state: Product[]) => state.length);
 
 export const selectTotalPrice = createSelector(
   createFeatureSelector('cartEntries'),
   (state: Product[]) => {
     let totalPrice = 0;
-    // console.log(state);
     state.forEach(p => totalPrice += p.price);
-    // console.log(totalPrice);
     return totalPrice;
   }
 );
-// export const selectTotalPrice = createSelector(createFeatureSelector('cartEntries'), (state: Product[]) => {
-//   let totalPrice = 0;
-//   state.forEach(p => totalPrice += p.price);
-//   return totalPrice;
-// });
+
 
 export const selectGroupedCartEntries = createSelector(createFeatureSelector('cartEntries'), (state: Product[]) => {
-  // let map: Map<number, ProductGroup> = new Map;
   const map: Map<number, ProductGroup> = new Map();
 
   state.forEach(p => {

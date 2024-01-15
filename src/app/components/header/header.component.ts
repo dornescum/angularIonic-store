@@ -13,11 +13,8 @@ export class HeaderComponent implements OnInit {
   totalPrice$: Observable<number>;
 
   constructor(private  store: Store) {
-    // this.countProduct$ = new Observable<number>();
     this.countProduct$ = store.select(selectCountProducts);
-    // this.totalPrice$ = new Observable();
     this.totalPrice$ = store.select(selectTotalPrice);
-    // console.log(this.totalPrice$);
   }
 
   ngOnInit() {}

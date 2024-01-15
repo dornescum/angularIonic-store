@@ -10,21 +10,21 @@ import { LaptopsPageRoutingModule } from './laptops-routing.module';
 
 import { LaptopsPage } from './laptops.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
-import {CardComponent} from 'src/app/components/card/card.component';
-import {ProductListComponent} from "../../components/product-list/product-list.component";
+import {ProductListComponent} from '../../components/product-list/product-list.component';
+import {HomePageModule} from "../home/home.module";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        IonicModule,
-        LaptopsPageRoutingModule,
-        CartPageModule,
-        ProductListComponent
-    ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    LaptopsPageRoutingModule,
+    CartPageModule,
+    ProductListComponent,
+    HomePageModule
+  ],
     exports: [
-        CardComponent
     ],
-    declarations: [LaptopsPage, CardComponent]
+    declarations: [LaptopsPage]
 })
 export class LaptopsPageModule {}

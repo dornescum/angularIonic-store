@@ -1,7 +1,5 @@
 @import "src/theme/_myVariables";
-//ion-toolbar {
-//  display: flex;
-//}
+
 .header {
   display: flex;
 }
@@ -10,7 +8,6 @@
   display: flex;
   justify-content: space-between;
   @media (max-width: 330px) {
-    //flex-direction: column;
     justify-content: center;
   }
 
@@ -37,15 +34,6 @@
     }
   }
 
-  //ion-title {
-  //  a {
-  //    color: $light-color;
-  //    text-decoration: none;
-  //    @media (max-width: 330px) {
-  //      width: 4rem;
-  //    }
-  //  }
-  //}
 
   .header-cart {
     display: flex;

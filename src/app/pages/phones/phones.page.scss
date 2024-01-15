@@ -1,4 +1,3 @@
-//@import "../src/theme/myVariables";
 @import "src/theme/myVariables";
 .card {
   margin: .5rem 0;
@@ -12,9 +11,7 @@
     text-transform: capitalize;
     margin: 1rem;
 
-    //@media(max-width:768px) {
     @media (max-width: 48rem) {
-      //font-size: .9rem;
       font-size: $font-lg;
     }
   }

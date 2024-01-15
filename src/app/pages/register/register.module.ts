@@ -8,17 +8,19 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
 import {CartPageModule} from '../cart/cart.module';
+import {HomePageModule} from "../home/home.module";
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    RegisterPageRoutingModule,
-    CartPageModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        RegisterPageRoutingModule,
+        CartPageModule,
+        ReactiveFormsModule,
+        HomePageModule
+    ],
   declarations: [RegisterPage]
 })
 export class RegisterPageModule {}

@@ -14,24 +14,22 @@ import {AppRoutingModule} from './app-routing.module';
 // import {PhonePipe} from './shared/pipes/phone.pipe';
 import {ApiService} from 'src/app/services/api.service';
 import {ProductComponent} from 'src/app/components/product/product.component';
-import {LocalPhonesService} from './services/localPhones.service';
-import {LocalService} from './services/local.service';
 import {StoreModule} from '@ngrx/store';
 import {cartReducer} from 'src/app/cart-store/cart.reducer';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
 
 import {BarRatingModule} from 'ngx-bar-rating';
+import {HomePageModule} from "./pages/home/home.module";
 
-// import {CardComponent} from 'src/app/components/card/card.component';
 
 
 @NgModule({
   declarations: [AppComponent, ProductComponent], // eslint-disable-next-line max-len
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, FormsModule, ReactiveFormsModule,
-    StoreModule.forRoot({cartEntries: cartReducer}), CartPageModule, BarRatingModule],
+    StoreModule.forRoot({cartEntries: cartReducer}), CartPageModule, BarRatingModule, HomePageModule],
   providers: [{
     provide: RouteReuseStrategy, useClass: IonicRouteStrategy
-  }, ApiService, LocalPhonesService, LocalService],
+  }, ApiService],
   bootstrap: [AppComponent],
   exports: []
 })

@@ -8,21 +8,21 @@ import { PhonesPageRoutingModule } from './phones-routing.module';
 
 import { PhonesPage } from './phones.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
-import {CardComponent} from 'src/app/components/card/card.component';
-import {ProductListComponent} from "../../components/product-list/product-list.component";
+import {ProductListComponent} from '../../components/product-list/product-list.component';
+import {HomePageModule} from "../home/home.module";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        FormsModule,
-        IonicModule,
-        PhonesPageRoutingModule,
-        CartPageModule,
-        ProductListComponent,
-    ],
-  exports: [
-    CardComponent
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    PhonesPageRoutingModule,
+    CartPageModule,
+    ProductListComponent,
+    HomePageModule,
   ],
-  declarations: [PhonesPage, CardComponent]
+  exports: [
+  ],
+  declarations: [PhonesPage]
 })
 export class PhonesPageModule {}

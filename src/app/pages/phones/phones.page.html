@@ -4,32 +4,13 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let item of phones; let i = index" size="6" size-lg="3" size-md="4" class="favorite" offset-md="0">
-<!--      <app-card [product]="item" (buttonClicked)="handleButtonClicked($event)"></app-card>-->
-<!--        <ion-card (click)="navigateToProduct(item)">-->
-<!--          <ion-card-title *ngIf="item.flashSale">Sale</ion-card-title>-->
-<!--          <ion-img [src]="item.img" class="favorite-img"></ion-img>-->
-<!--          <div class="favorite-footer">-->
-<!--            <ul class="favorite-title">-->
-<!--              <li>{{item.title}}</li>-->
-<!--              <li *ngIf="item.favorite">-->
-<!--                <ion-icon name="star" style="color: red"></ion-icon>-->
-<!--              </li>-->
-<!--            </ul>-->
-<!--            <p class="favorite-old-price">Old price : {{(item.price * taxPrice) + item.price | currency}}</p>-->
-<!--            <div class="favorite-actions">-->
-<!--              <p class="favorite-price">{{item.price | currency}}</p>-->
-<!--              <ion-icon name="cart" style="color: black; height: 18px" class="favorite-action"></ion-icon>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </ion-card>-->
         <app-product-list  [title]="item.title"
                            [img]="item.img"
                            [favorite]="item.favorite"
                            [price]="item.price"
-                           (navigateToProduct)="navigateToProduct(item)"
-        ></app-product-list>
-
+                           (navigateToProduct)="navigateToProduct(item)"></app-product-list>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+<app-footer></app-footer>

@@ -1,168 +1,133 @@
-<!--<ion-header class="header">-->
-<!--  <ion-menu-button class="menu" color="light"></ion-menu-button>-->
-<!--  <ion-toolbar color="dark">-->
-<!--    <ion-title>Ecommerce</ion-title>-->
-<!--  </ion-toolbar>-->
-<!--</ion-header>-->
+
 <app-header></app-header>
-<ion-content >
+<ion-content>
   <form #formRefrence="ngForm" (ngSubmit)="onSubmit(formRefrence)" style="margin: 5rem 0 0 0 ;">
     <ion-grid class="login-main">
       <ion-row>
         <ion-col offset-sm="3" size-sm="6">
           <ion-list>
-
-            <!-- name -->
             <ion-item>
-              <ion-label position="floating"> Name </ion-label>
-              <!--              am acces cu NgModel pe inputul asta!-->
+              <ion-label position="floating"> Name</ion-label>
               <ion-input
                 #nameCtrl="ngModel"
-                name="name"
-                ngModel
-                required
-                type="text"
                 autofocus
                 minlength="6"
+                name="name"
+                ngModel
                 placeholder="name"
-              ></ion-input>
+                required
+                type="text"></ion-input>
             </ion-item>
-            <!--            =====mesaj de validare name===-->
             <ion-item *ngIf="!nameCtrl.valid && nameCtrl.touched" lines="none">
-              <ion-label> Should be a valid name. </ion-label>
+              <ion-label> Should be a valid name.</ion-label>
             </ion-item>
-<!-- email -->
             <ion-item>
-              <ion-label position="floating"> Email </ion-label>
-              <!--              am acces cu NgModel pe inputul asta!-->
+              <ion-label position="floating"> Email</ion-label>
               <ion-input
                 #emailCtrl="ngModel"
                 email
                 name="email"
                 ngModel
+                placeholder="your@email.com"
                 required
-                type="text"
-               placeholder="your@email.com"
-              ></ion-input>
+                type="text"></ion-input>
             </ion-item>
-            <!--            =====mesaj de validare email===-->
             <ion-item
               *ngIf="!emailCtrl.valid && emailCtrl.touched"
-              lines="none"
-            >
-              <ion-label> Should be a valid email adress. </ion-label>
+              lines="none">
+              <ion-label> Should be a valid email adress.</ion-label>
             </ion-item>
 
-            <!--  Card          ===========-->
             <ion-item>
-              <ion-label position="floating"> Credit card </ion-label>
+              <ion-label position="floating"> Credit card</ion-label>
               <ion-input
                 #cardCtrl="ngModel"
                 minlength="16"
                 name="card"
                 ngModel
+                placeholder="0404 0404 0404 0404"
                 required
-                type="number"
-               placeholder="0404 0404 0404 0404"
-              ></ion-input>
+                type="number"></ion-input>
             </ion-item>
-            <!--            === mesaj de validare card ===-->
             <ion-item *ngIf="!cardCtrl.valid && cardCtrl.touched" lines="none">
-              <ion-label> Should at least be 16 characters long. </ion-label>
+              <ion-label> Should at least be 16 characters long.</ion-label>
             </ion-item>
 
-            <!--     password       ===========-->
             <ion-item>
-              <ion-label position="floating"> Password </ion-label>
+              <ion-label position="floating"> Password</ion-label>
               <ion-input
                 #passwordCtrl="ngModel"
                 minlength="6"
                 name="password"
                 ngModel
+                placeholder=" ****"
                 required
-                type="password"
-               placeholder=" ****"
-              ></ion-input>
+                type="password"></ion-input>
             </ion-item>
-            <!--            === mesaj de validare password ===-->
             <ion-item
               *ngIf="!passwordCtrl.valid && passwordCtrl.touched"
-              lines="none"
-            >
-              <ion-label> Should at least be 6 characters long. </ion-label>
+              lines="none">
+              <ion-label> Should at least be 6 characters long.</ion-label>
             </ion-item>
-            <!--        Name on card    ============== -->
             <ion-item>
-              <ion-label position="floating"> Name on card </ion-label>
-              <!--              am acces cu NgModel pe inputul asta!-->
+              <ion-label position="floating"> Name on card</ion-label>
               <ion-input
                 #cardNameCtrl="ngModel"
+                minlength="6"
                 name="cardName"
                 ngModel
-                required
-                type="text"
-                minlength="6"
                 placeholder="John Doe"
-              ></ion-input>
+                required
+                type="text"></ion-input>
             </ion-item>
-            <!--            =====mesaj de validare name card===-->
             <ion-item *ngIf="!nameCtrl.valid && nameCtrl.touched" lines="none">
-              <ion-label> Should be a valid name. </ion-label>
+              <ion-label> Should be a valid name.</ion-label>
             </ion-item>
-
-
-      <ion-item>
-              <ion-label position="floating"> Expires </ion-label>
+            <ion-item>
+              <ion-label position="floating"> Expires</ion-label>
               <ion-input
                 #expiresCtrl="ngModel"
                 minlength="6"
                 name="expires"
                 ngModel
-                required
-                type="date"
                 placeholder="09/10"
-              ></ion-input>
+                required
+                type="date"></ion-input>
             </ion-item>
-            <!--            === mesaj de validare password ===-->
             <ion-item
               *ngIf="!expiresCtrl.valid && expiresCtrl.touched"
               lines="none"
             >
-              <ion-label> Should at least be 6 characters long. </ion-label>
+              <ion-label> Should at least be 6 characters long.</ion-label>
             </ion-item>
-      <ion-item>
-              <ion-label position="floating"> Cvv </ion-label>
+            <ion-item>
+              <ion-label position="floating"> Cvv</ion-label>
               <ion-input
                 #cvvCtrl="ngModel"
+                autocomplete
+                autocorrect
                 minlength="3"
                 name="cvv"
                 ngModel
-                required
-                type="number"
-                autocomplete
-                autocorrect
                 placeholder="352"
-              ></ion-input>
+                required
+                type="number"></ion-input>
             </ion-item>
-            <!--            === mesaj de validare password ===-->
             <ion-item
               *ngIf="!cvvCtrl.valid && cvvCtrl.touched"
-              lines="none"
-            >
-              <ion-label> Should at least be 3 characters long. </ion-label>
+              lines="none">
+              <ion-label> Should at least be 3 characters long.</ion-label>
             </ion-item>
           </ion-list>
         </ion-col>
       </ion-row>
-<!--      routerLink="/home"-->
       <ion-button
+        (click)="clearEntries()"
+        class="ion-padding-start ion-padding-end"
         color="dark"
         expand="block"
         size="large"
-        type="submit"
-        class="ion-padding-start ion-padding-end"
-        (click)="clearEntries()"
-      >
+        type="submit">
         Go
       </ion-button>
     </ion-grid>

@@ -10,6 +10,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
 import {BarRatingModule} from 'ngx-bar-rating';
+import {FooterComponent} from "../../components/footer/footer.component";
 // import {ProductComponent} from 'src/app/components/product/product.component';
 
 @NgModule({
@@ -21,6 +22,9 @@ import {BarRatingModule} from 'ngx-bar-rating';
     CartPageModule,
     BarRatingModule,
   ],
-  declarations: [HomePage]
+  exports: [
+    FooterComponent
+  ],
+  declarations: [HomePage, FooterComponent]
 })
 export class HomePageModule {}

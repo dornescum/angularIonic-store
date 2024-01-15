@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
-import {NewServiceService} from 'src/app/services/new-service.service';
 import {ProductService} from '../../services/products.service';
 import {Product} from '../../utils/interface';
-import {Subscription} from "rxjs";
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-laptops',
@@ -16,7 +15,7 @@ export class LaptopsPage implements OnInit {
   taxPrice= Math.random();
   private routerSubscription: Subscription;
 
-  constructor(  private productService: ProductService, private router: Router,) { }
+  constructor(  private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
     this.router.events.subscribe(event => {

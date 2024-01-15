@@ -18,13 +18,11 @@ export class RegisterPage implements OnInit {
     });
   }
 
-
   ngOnInit() {
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log('Form Submission', this.loginForm.value);
       this.router.navigate(['/home']);
     } else {
       console.log('Form is not valid');
