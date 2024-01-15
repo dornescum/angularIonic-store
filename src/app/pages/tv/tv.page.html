@@ -4,7 +4,7 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let tv of tvs; let i = index" size="6" size-lg="3" size-md="4" class="favorite">
-        <app-card [product]="tv"></app-card>
+<!--        <app-card [product]="tv"></app-card>-->
 <!--        <ion-card class="card">-->
 <!--          <ion-img [src]="tv.img" class="card-img"></ion-img>-->
 <!--          <ion-card-header>-->
@@ -16,6 +16,12 @@
 <!--            >-->
 <!--          </ion-card-content>-->
 <!--        </ion-card>-->
+        <app-product-list  [title]="tv.title"
+                           [img]="tv.img"
+                           [favorite]="tv.favorite"
+                           [price]="tv.price"
+                           (navigateToProduct)="navigateToProduct(tv)"
+        ></app-product-list>
       </ion-col>
     </ion-row>
   </ion-grid>

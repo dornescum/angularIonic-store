@@ -2,7 +2,8 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {RouteReuseStrategy} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import {CommonModule} from '@angular/common';
 
 import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
@@ -26,7 +27,8 @@ import {BarRatingModule} from 'ngx-bar-rating';
 
 @NgModule({
   declarations: [AppComponent, ProductComponent], // eslint-disable-next-line max-len
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, FormsModule, StoreModule.forRoot({cartEntries: cartReducer}), CartPageModule, BarRatingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, CommonModule, FormsModule, ReactiveFormsModule,
+    StoreModule.forRoot({cartEntries: cartReducer}), CartPageModule, BarRatingModule],
   providers: [{
     provide: RouteReuseStrategy, useClass: IonicRouteStrategy
   }, ApiService, LocalPhonesService, LocalService],

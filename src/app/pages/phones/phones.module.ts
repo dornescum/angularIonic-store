@@ -9,6 +9,7 @@ import { PhonesPageRoutingModule } from './phones-routing.module';
 import { PhonesPage } from './phones.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
 import {CardComponent} from 'src/app/components/card/card.component';
+import {ProductListComponent} from "../../components/product-list/product-list.component";
 
 @NgModule({
     imports: [
@@ -17,6 +18,7 @@ import {CardComponent} from 'src/app/components/card/card.component';
         IonicModule,
         PhonesPageRoutingModule,
         CartPageModule,
+        ProductListComponent,
     ],
   exports: [
     CardComponent

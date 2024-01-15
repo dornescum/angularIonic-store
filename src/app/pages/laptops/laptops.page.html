@@ -4,7 +4,13 @@
   <ion-grid>
     <ion-row>
       <ion-col *ngFor="let item of laptops; let i = index" class="favorite" offset-md="0" size="6" size-lg="3" size-md="6">
-        <app-card [product]="item"></app-card>
+<!--        <app-card [product]="item"></app-card>-->
+        <app-product-list  [title]="item.title"
+                           [img]="item.img"
+                           [favorite]="item.favorite"
+                           [price]="item.price"
+                           (navigateToProduct)="navigateToProduct(item)"
+        ></app-product-list>
       </ion-col>
     </ion-row>
   </ion-grid>

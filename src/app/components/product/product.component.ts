@@ -29,7 +29,7 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
     console.log('this id ', this.id);
-    console.log('this route ', this.route);
+    // console.log('this route ', this.route);
     // good
     // this.product = this.newApi.getProductId(this.id).subscribe(
     //   (data: Product) => {

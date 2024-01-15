@@ -20,7 +20,7 @@ export const cartReducer = createReducer(initialCartEntries,
     return [];
   }),
 
-  on(addProduct, (entries, product) => {
+  on(addProduct, (entries: Product[], product) => {
     const entriesClone: Product[] = JSON.parse(JSON.stringify(entries));
     // console.log(product);
     entriesClone.push(product);

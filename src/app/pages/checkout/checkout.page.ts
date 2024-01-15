@@ -66,5 +66,6 @@ export class CheckoutPage implements OnInit {
   }
   clearEntries() {
     this.store.dispatch(clearCart());
+    this.router.navigate(['/hone']);
   }
 }

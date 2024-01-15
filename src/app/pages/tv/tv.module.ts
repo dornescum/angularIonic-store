@@ -9,15 +9,17 @@ import { TvPageRoutingModule } from './tv-routing.module';
 import { TvPage } from './tv.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
 import {CardComponent} from 'src/app/components/card/card.component';
+import {ProductListComponent} from "../../components/product-list/product-list.component";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    TvPageRoutingModule,
-    CartPageModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        TvPageRoutingModule,
+        CartPageModule,
+        ProductListComponent
+    ],
   declarations: [TvPage, CardComponent]
 })
 export class TvPageModule {}

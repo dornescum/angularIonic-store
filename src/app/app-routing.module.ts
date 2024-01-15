@@ -9,11 +9,6 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full',
   },
-  // {
-  //   path: 'folder/:id',
-  //   loadChildren: () =>
-  //     import('./folder/folder.module').then((m) => m.FolderPageModule),
-  // },
   {
     path: 'home',
     loadChildren: () =>
@@ -24,11 +19,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginPageModule),
   },
-  // {
-  //   path: 'cards',
-  //   loadChildren: () =>
-  //     import('./pages/cards/cards.module').then((m) => m.CardsPageModule),
-  // },
+  {
+    path: 'register',
+    loadChildren: () =>
+      import('./pages/register/register.module').then((m) => m.RegisterPageModule),
+  },
   {
     path: 'product/:id',
     component: ProductComponent
@@ -53,7 +48,11 @@ const routes: Routes = [
     path: 'phones',
     loadChildren: () => import('./pages/phones/phones.module').then( m => m.PhonesPageModule)
   },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' } // Redirect to a default route
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule)
+  }
 
 
 ];
