@@ -1,5 +1,26 @@
+# Mockup E-commerce Project
 
-# angularIonic-store
+This mockup e-commerce project is designed to cater to both Android and web platforms, offering a seamless and responsive user experience. Utilizing the robust **Angular framework (v14.0.0)**, the application ensures a dynamic and interactive frontend, suitable for modern retail needs.
+
+The project leverages the latest **Ionic technologies (v6.3.3)** for mobile-first design, ensuring optimal performance and a native-like experience on Android devices. Enhanced by **Capacitor (v4.0.1)** plugins, the application integrates native functionalities like haptics, keyboard interactions, and efficient app preferences management.
+
+At its core, the application connects to a reliable back-end service built with **Express and MySQL**. This backend integration ensures robust data handling, secure transactions, and dynamic content management, making the platform ideal for real-time e-commerce operations.
+
+## Key Frontend Features:
+
+- **Angular (v14.0.0)**: Offers a powerful and efficient framework for building scalable web applications.
+- **Ionic Framework (v6.3.3)**: Provides a suite of UI components for developing high-quality cross-platform apps.
+- **Capacitor Plugins**: Enhance the native capabilities on Android, including features like haptics feedback and keyboard interactions.
+- **State Management with NgRx (v14.2.0)**: Ensures efficient state management in Angular applications, crucial for handling complex user interfaces and data interactions.
+
+## Development Tools:
+
+- **Angular CLI (v14.0.0)**: A command-line interface for Angular, facilitating project scaffolding, development, and testing.
+- **ESLint and TypeScript ESLint**: Enforce coding standards and detect potential errors in TypeScript code.
+- **Docker for MySQL**
+
+![Alt Text](/src/assets/images/1.png);
+![Alt Text](/src/assets/images/2.png);
 
 # Check first
 global packages:

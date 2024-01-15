@@ -1,8 +1,8 @@
 {
   "name": "angular-store",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Mihai Dornescu",
+  "homepage": "https://dornescum.github.io/Mihai-Dornescu/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
