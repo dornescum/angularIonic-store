@@ -8,7 +8,8 @@ import { TvPageRoutingModule } from './tv-routing.module';
 
 import { TvPage } from './tv.page';
 import {CartPageModule} from 'src/app/pages/cart/cart.module';
-import {CardComponent} from 'src/app/components/card/card.component';
+import {ProductListComponent} from '../../components/product-list/product-list.component';
+import {HomePageModule} from "../home/home.module";
 
 @NgModule({
   imports: [
@@ -16,8 +17,10 @@ import {CardComponent} from 'src/app/components/card/card.component';
     FormsModule,
     IonicModule,
     TvPageRoutingModule,
-    CartPageModule
+    CartPageModule,
+    ProductListComponent,
+    HomePageModule
   ],
-  declarations: [TvPage, CardComponent]
+  declarations: [TvPage]
 })
 export class TvPageModule {}

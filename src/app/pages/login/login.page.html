@@ -1,7 +1,6 @@
 <ion-header class="header">
       <ion-menu-button class="menu" color="light"></ion-menu-button>
       <ion-toolbar color="dark">
-        <!--    <ion-title>Login</ion-title>-->
         <ion-title>{{isLogin ? 'Login': 'Sign up'}}</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -19,10 +18,8 @@
               <ion-label position="floating">
                 Email
               </ion-label>
-              <!--              am acces cu NgModel pe inputul asta!-->
               <ion-input #emailCtrl="ngModel" email name="email" ngModel required type="email" autofocus></ion-input>
             </ion-item>
-            <!--            =====mesaj de validare email===-->
             <ion-item
               *ngIf="!emailCtrl.valid && emailCtrl.touched"
               lines="none"
@@ -31,7 +28,6 @@
                 Should be a valid email address.
               </ion-label>
             </ion-item>
-            <!--            ===========-->
             <ion-item>
               <ion-label position="floating">
                 Password
@@ -39,7 +35,6 @@
               <ion-input #passwordCtrl="ngModel" minlength="6" name="password" ngModel required
                          type="password" autocomplete autocorrect></ion-input>
             </ion-item>
-            <!--            === mesaj de validare password ===-->
             <ion-item
               *ngIf="!passwordCtrl.valid && passwordCtrl.touched"
               lines="none"
@@ -48,8 +43,7 @@
                 Should at least be 6 characters long.
               </ion-label>
             </ion-item>
-            <!--            ============== -->
-            <!--            <div *ngIf="isLoading">Loading ...</div>-->
+
           </ion-list>
         </ion-col>
       </ion-row>
@@ -59,7 +53,6 @@
       {{isLogin ? 'Switch to Sign Up' : 'Login'}}
       </ion-button>
 
-<!--      dc formRefrence is invalid butonul este disabled-->
       <ion-button (click)="onLogin()" color="dark" expand="block" size="large" type="submit"
       [disabled]="!formRefrence.valid"
                   class="ion-padding-start ion-padding-end"
@@ -68,3 +61,4 @@
   </form>
 
 </ion-content>
+<app-footer></app-footer>

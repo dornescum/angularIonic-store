@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {NewServiceService} from 'src/app/services/new-service.service';
-import {ProductService} from '../../services/testing.service';
+import {NavigationEnd, Router} from '@angular/router';
+import {ProductService} from '../../services/products.service';
 import {Product} from '../../utils/interface';
 
 @Component({
@@ -9,19 +8,32 @@ import {Product} from '../../utils/interface';
 })
 export class TvPage implements OnInit {
   tvs: Product[] = [];
+  eventUrl: string;
+  taxPrice= Math.random();
 
-  constructor(private router: Router, private newService: NewServiceService, private newApi: ProductService) {
+  constructor( private productService: ProductService, private router: Router) {
   }
 
   ngOnInit() {
-    this.newApi.getAllProducts().subscribe(
-      (data: Product[]) => {
-        this.tvs = data.filter((item: Product) => item.tag === 'tv');
-      },
-      (error) => {
-        console.error('Error fetching laptops: ', error);
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.eventUrl = event.url;
+        this.productService.getCategoryProducts('/tvs').subscribe(
+          (data: Product[]) => {
+            this.tvs = data;
+          },
+          (error) => {
+            console.error('Error fetching tvs: ', error);
+          }
+        );
       }
-    );
+    });
+  }
+
+  navigateToProduct(item: Product) {
+    this.router.navigate(['/product', item.id], {
+      state: { product: item }
+    });
   }
 
 }

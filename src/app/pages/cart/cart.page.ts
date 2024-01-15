@@ -12,14 +12,12 @@ import {addProduct, removeProduct} from 'src/app/cart-store/cart.actions';
 })
 export class CartPage implements OnInit {
   cartEntries$: Observable<ProductGroup[]>;
-  // countProduct$: Observable<number>;
   countProduct$: Observable<any>;
 
 
   constructor(private store: Store) {
     this.cartEntries$ = store.select(selectGroupedCartEntries);
     this.countProduct$ = store.select(selectCountProducts);
-    // console.log(this.cartEntries$);
   }
 
   ngOnInit() {

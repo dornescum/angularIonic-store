@@ -3,15 +3,14 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let item of phones; let i = index" size="6" size-lg="3" size-md="4" class="favorite" offset-md="0" size="6" size-lg="3" size-md="6">
-      <app-card [product]="item"></app-card>
-
-        <ul>
-          <li>
-<!--            {{}}-->
-          </li>
-        </ul>
+      <ion-col *ngFor="let item of phones; let i = index" size="6" size-lg="3" size-md="4" class="favorite" offset-md="0">
+        <app-product-list  [title]="item.title"
+                           [img]="item.img"
+                           [favorite]="item.favorite"
+                           [price]="item.price"
+                           (navigateToProduct)="navigateToProduct(item)"></app-product-list>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+<app-footer></app-footer>

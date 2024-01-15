@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import {NewServiceService} from 'src/app/services/new-service.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {Product} from '../../utils/interface';
-import {ProductService} from '../../services/testing.service';
+import {ProductService} from '../../services/products.service';
 
 @Component({
   selector: 'app-phones',
@@ -11,18 +10,32 @@ import {ProductService} from '../../services/testing.service';
 })
 export class PhonesPage implements OnInit {
   phones: Product[]= [];
+  eventUrl: string;
+  taxPrice= Math.random();
 
-  constructor( private newApi: ProductService) { }
+
+  constructor( private productService: ProductService, private router: Router) { }
 
   ngOnInit() {
-    this.newApi.getAllProducts().subscribe(
-      (data: Product[]) => {
-        this.phones = data.filter((item: Product) => item.tag === 'phones');
-      },
-      (error) => {
-        console.error('Error fetching laptops: ', error);
+     this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.eventUrl = event.url;
+        this.productService.getCategoryProducts('/phones').subscribe(
+          (data: Product[]) => {
+            this.phones = data;
+          },
+          (error) => {
+            console.error('Error fetching laptops: ', error);
+          }
+        );
       }
-    );
+    });
+  }
+
+  navigateToProduct(item: Product) {
+    this.router.navigate(['/product', item.id], {
+      state: { product: item }
+    });
   }
 
 }

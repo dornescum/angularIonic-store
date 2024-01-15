@@ -1,0 +1,17 @@
+<ion-card (click)="onProductClick()">
+  <ion-card-title *ngIf="flashSale">Sale</ion-card-title>
+  <ion-img [src]="img" class="favorite-img"></ion-img>
+  <div class="favorite-footer">
+    <ul class="favorite-title">
+      <li>{{title}}</li>
+      <li *ngIf="favorite">
+        <ion-icon name="star" style="color: red"></ion-icon>
+      </li>
+    </ul>
+    <p class="favorite-old-price">Old price : {{(price * taxPrice) + price | currency}}</p>
+    <div class="favorite-actions">
+      <p class="favorite-price">{{price | currency}}</p>
+      <ion-icon name="cart" style="color: black; height: 18px" class="favorite-action"></ion-icon>
+    </div>
+  </div>
+</ion-card>

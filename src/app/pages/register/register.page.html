@@ -1,0 +1,21 @@
+<app-header></app-header>
+
+<ion-content class="ion-padding ion-margin ion-justify-text-center">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-main">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input formControlName="password" type="password" required></ion-input>
+      </ion-item>
+      <ion-button expand="block"  color="dark" type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+    </form>
+</ion-content>
+
+<app-footer></app-footer>
